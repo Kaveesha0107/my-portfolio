@@ -1,14 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
-import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink, Menu, X, Play } from 'lucide-react';
-
-// Certificate images import කරන්න
-import webdesignCert from './assets/certificates/webdesign.png';
-import cppCert from './assets/certificates/c++.jpg';
-import cCert from './assets/certificates/cLanguage.png';
-import pythonCert from './assets/certificates/python.png';
-import htmlCert from './assets/certificates/html.jpg';
-import japuraCert from './assets/certificates/japura.png';
+import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink, Menu, X, Play, Award, Code, Briefcase, GraduationCap } from 'lucide-react';
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('home');
@@ -19,6 +10,16 @@ export default function Portfolio() {
   const projects = [
     {
       id: 1,
+      title: "Professional Portfolio Website",
+      description: "A modern, responsive portfolio website built with React and Tailwind CSS. Features smooth navigation, interactive project showcases, certification displays, and comprehensive skill presentation.",
+      tech: ["React", "Tailwind CSS", "Lucide Icons", "Responsive Design"],
+      github: "https://github.com/kaveesha-muthunilmi/portfolio",
+      demo: "#",
+      features: ["Responsive Design", "Interactive Modals", "Smooth Navigation", "Professional Layout"],
+      status: "Completed"
+    },
+    {
+      id: 2,
       title: "WellCore | Personal Wellness Mobile App",
       description: "Designed and developed a wellness-focused Android application to help users build healthy habits, track moods, and stay hydrated with ease. Features include habit tracking, mood analytics, water intake reminders, and interactive widgets.",
       tech: ["Android Studio", "Kotlin", "AlarmManager", "MPAndroidChart", "Widgets", "Room Database"],
@@ -28,7 +29,7 @@ export default function Portfolio() {
       status: "Completed"
     },
     {
-      id: 2,
+      id: 3,
       title: "Salary Management System",
       description: "A full-stack web application designed to calculate, track, and manage employee salaries, built using the MERN stack with advanced reporting features.",
       tech: ["MongoDB", "Express.js", "React.js", "Node.js", "JWT", "Chart.js"],
@@ -38,7 +39,7 @@ export default function Portfolio() {
       status: "Completed"
     },
     {
-      id: 3,
+      id: 4,
       title: "EverGreen | Tea Collection Mobile App",
       description: "Designed and built an Android application to digitalize and streamline the tea leaf collection process between farmers and factories with real-time tracking.",
       tech: ["Android Studio", "Java", "Kotlin", "Firebase", "Google Maps API"],
@@ -48,7 +49,7 @@ export default function Portfolio() {
       status: "Completed"
     },
     {
-      id: 4,
+      id: 5,
       title: "Uni Hub | Online Customer Care System",
       description: "Developed a dedicated online portal for university students to submit queries and receive support from the administration, built on the Java EE stack.",
       tech: ["JSP", "Servlets", "MySQL", "Bootstrap", "AJAX"],
@@ -58,7 +59,7 @@ export default function Portfolio() {
       status: "Completed"
     },
     {
-      id: 5,
+      id: 6,
       title: "Medcore | Diet Plan & Health Checkup System",
       description: "A web-based platform developed in my first year to allow users to create customized diet plans and schedule health checkups with healthcare professionals.",
       tech: ["HTML", "CSS", "JavaScript", "PHP", "Java", "MySQL"],
@@ -74,41 +75,43 @@ export default function Portfolio() {
       name: "Web Design for Beginners", 
       issuer: "University of Moratuwa", 
       date: "May 2024",
-      image: webdesignCert,
-      verification: "HG9GMxV9u2"
+      verification: "HG9GMxV9u2",
+      icon: "🎨"
     },
     { 
       name: "Python for Beginners", 
       issuer: "University of Moratuwa", 
       date: "Apr 2023",
-      image: pythonCert,
-      verification: "Xrwq8BADeT"
+      verification: "Xrwq8BADeT",
+      icon: "🐍"
     },
     { 
       name: "Introduction to C++", 
       issuer: "Sololearn", 
       date: "Aug 2024",
-      image: cppCert,
-      verification: "CC-SJZTUSJB"
+      verification: "CC-SJZTUSJB",
+      icon: "⚙️"
     },
     { 
       name: "Introduction to HTML", 
       issuer: "Sololearn", 
       date: "Aug 2024",
-      image: htmlCert
+      verification: "N/A",
+      icon: "🌐"
     },
     { 
       name: "Introduction to C", 
       issuer: "Sololearn", 
       date: "Jul 2024",
-      image: cCert,
-      verification: "CC-035JM6WO"
+      verification: "CC-035JM6WO",
+      icon: "💻"
     },
     { 
       name: "J'PURAXTREME Participation", 
       issuer: "IEEE University of Sri Jayewardenepura", 
       date: "Oct 2025",
-      image: japuraCert
+      verification: "N/A",
+      icon: "🏆"
     }
   ];
 
@@ -144,23 +147,30 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       {/* Navigation Header */}
-      <header className="fixed top-0 w-full bg-white shadow-sm border-b border-gray-200 z-50">
+      <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-lg border-b border-blue-100 z-50">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="text-2xl font-bold text-blue-800">KM</div>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center text-white font-bold shadow-md">
+                KM
+              </div>
+              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent hidden sm:block">
+                Kaveesha Muthunilmi
+              </span>
+            </div>
             
             {/* Desktop Menu */}
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex space-x-2">
               {['home', 'about', 'projects', 'education', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className={`capitalize font-medium px-3 py-2 rounded-lg transition-all duration-300 ${
+                  className={`capitalize font-medium px-4 py-2 rounded-lg transition-all duration-300 ${
                     activeSection === section
-                      ? 'text-blue-600 bg-blue-50 border border-blue-200'
-                      : 'text-gray-600 hover:text-blue-600 hover:bg-gray-50'
+                      ? 'text-white bg-gradient-to-r from-blue-600 to-blue-700 shadow-md'
+                      : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
                   }`}
                 >
                   {section}
@@ -170,21 +180,25 @@ export default function Portfolio() {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              className="md:hidden p-2 rounded-lg hover:bg-blue-50 transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileMenuOpen ? <X size={24} className="text-blue-600" /> : <Menu size={24} className="text-blue-600" />}
             </button>
           </div>
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className="md:hidden pb-4 bg-white border-t border-gray-200">
+            <div className="md:hidden pb-4 bg-white border-t border-blue-100">
               {['home', 'about', 'projects', 'education', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className="block w-full text-left py-3 px-4 capitalize text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors border-b border-gray-100"
+                  className={`block w-full text-left py-3 px-4 capitalize transition-colors border-b border-blue-50 ${
+                    activeSection === section
+                      ? 'bg-blue-50 text-blue-600 font-semibold'
+                      : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600'
+                  }`}
                 >
                   {section}
                 </button>
@@ -195,32 +209,36 @@ export default function Portfolio() {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="pt-32 pb-20 px-4 bg-gradient-to-br from-blue-50 to-blue-100">
-        <div className="max-w-6xl mx-auto text-center">
+      <section id="home" className="pt-28 pb-20 px-4 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+        <div className="max-w-6xl mx-auto text-center relative z-10">
           <div className="mb-8">
-            <div className="w-40 h-40 mx-auto bg-white rounded-full overflow-hidden mb-6 shadow-lg border-4 border-white">
-              <div className="w-full h-full bg-blue-600 flex items-center justify-center text-white text-4xl font-bold">
-                KM
+            <div className="w-48 h-48 mx-auto rounded-full overflow-hidden mb-6 shadow-2xl border-4 border-white/20 backdrop-blur-sm bg-white/10">
+              <div className="w-full h-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white">
+                <span className="text-6xl font-bold">KM</span>
               </div>
             </div>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">KAVEESHA MUTHUNILMI</h1>
-          <p className="text-xl text-gray-600 mb-8">Information Technology Undergraduate</p>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8 leading-relaxed">
-            A passionate IT undergraduate specializing in full-stack and mobile development. 
-            Dedicated to creating efficient software solutions with modern technologies.
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">KAVEESHA MUTHUNILMI</h1>
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <Code size={24} className="text-blue-200" />
+            <p className="text-2xl text-blue-100 font-medium">Information Technology Undergraduate</p>
+          </div>
+          <p className="text-lg text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed">
+            Passionate IT undergraduate specializing in full-stack and mobile development. 
+            Creating innovative software solutions with modern technologies and best practices.
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
             <button
               onClick={() => scrollToSection('projects')}
-              className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg font-semibold flex items-center gap-2"
+              className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl font-semibold flex items-center gap-2 transform hover:scale-105"
             >
-              <Play size={20} />
+              <Briefcase size={20} />
               View Projects
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition-all duration-300 font-semibold"
+              className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white/10 transition-all duration-300 font-semibold backdrop-blur-sm transform hover:scale-105"
             >
               Contact Me
             </button>
@@ -231,19 +249,28 @@ export default function Portfolio() {
       {/* About Section */}
       <section id="about" className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">Skills & Expertise</h2>
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-600 px-4 py-2 rounded-full mb-4">
+              <Award size={20} />
+              <span className="font-semibold">Technical Expertise</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Skills & Expertise</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Comprehensive skill set spanning multiple technologies and frameworks
+            </p>
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {Object.entries(skills).map(([category, skillList]) => (
-              <div key={category} className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              <div key={category} className="bg-gradient-to-br from-white to-blue-50 p-6 rounded-xl shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
                   {category}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {skillList.map((skill) => (
                     <span
                       key={skill}
-                      className="bg-gray-100 px-3 py-1 rounded text-sm text-gray-700 border border-gray-300 hover:border-blue-300 hover:text-blue-700 transition-all"
+                      className="bg-white px-3 py-1.5 rounded-lg text-sm text-gray-700 border border-blue-200 hover:border-blue-400 hover:text-blue-700 hover:shadow-md transition-all cursor-default"
                     >
                       {skill}
                     </span>
@@ -256,25 +283,34 @@ export default function Portfolio() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-4 bg-gray-50">
+      <section id="projects" className="py-20 px-4 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-4">Projects</h2>
-          <p className="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-            Here are some of my recent projects showcasing my skills in software development
-          </p>
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-600 px-4 py-2 rounded-full mb-4">
+              <Briefcase size={20} />
+              <span className="font-semibold">Portfolio</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Showcasing innovative solutions across web and mobile platforms
+            </p>
+          </div>
           
-          <div className="space-y-8">
+          <div className="space-y-6">
             {projects.map((project) => (
-              <div key={project.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 overflow-hidden">
+              <div key={project.id} className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-100 overflow-hidden transform hover:-translate-y-1">
                 <div className="p-6">
                   <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                     <div className="flex-1">
-                      <div className="flex items-start justify-between mb-3">
-                        <h3 className="text-2xl font-bold text-gray-800">{project.title}</h3>
-                        <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
+                      <div className="flex items-start justify-between mb-3 flex-wrap gap-2">
+                        <h3 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                          <Code size={24} className="text-blue-600" />
+                          {project.title}
+                        </h3>
+                        <span className={`px-4 py-1.5 rounded-full text-sm font-semibold shadow-sm ${
                           project.status === 'Completed' 
-                            ? 'bg-green-100 text-green-800' 
-                            : 'bg-yellow-100 text-yellow-800'
+                            ? 'bg-gradient-to-r from-green-400 to-green-500 text-white' 
+                            : 'bg-gradient-to-r from-yellow-400 to-yellow-500 text-white'
                         }`}>
                           {project.status}
                         </span>
@@ -285,10 +321,13 @@ export default function Portfolio() {
                       </p>
                       
                       <div className="mb-4">
-                        <h4 className="font-semibold text-gray-700 mb-2">Key Features:</h4>
+                        <h4 className="font-semibold text-gray-700 mb-3 flex items-center gap-2">
+                          <div className="w-1 h-4 bg-blue-500 rounded"></div>
+                          Key Features
+                        </h4>
                         <div className="flex flex-wrap gap-2">
                           {project.features.map((feature, index) => (
-                            <span key={index} className="bg-blue-50 text-blue-700 px-3 py-1 rounded text-sm border border-blue-200">
+                            <span key={index} className="bg-blue-50 text-blue-700 px-3 py-1.5 rounded-lg text-sm border border-blue-200 font-medium">
                               {feature}
                             </span>
                           ))}
@@ -299,7 +338,7 @@ export default function Portfolio() {
                         {project.tech.map((tech) => (
                           <span
                             key={tech}
-                            className="bg-gray-100 text-gray-700 px-3 py-1 rounded text-sm border border-gray-300"
+                            className="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg text-sm border border-gray-300 font-medium"
                           >
                             {tech}
                           </span>
@@ -312,7 +351,7 @@ export default function Portfolio() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors text-center font-medium flex items-center justify-center gap-2 whitespace-nowrap"
+                        className="bg-gradient-to-r from-gray-800 to-gray-900 text-white px-6 py-3 rounded-lg hover:from-gray-900 hover:to-black transition-all text-center font-medium flex items-center justify-center gap-2 whitespace-nowrap shadow-md hover:shadow-lg"
                       >
                         <Github size={18} />
                         GitHub
@@ -321,14 +360,14 @@ export default function Portfolio() {
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors text-center font-medium flex items-center justify-center gap-2 whitespace-nowrap"
+                        className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all text-center font-medium flex items-center justify-center gap-2 whitespace-nowrap shadow-md hover:shadow-lg"
                       >
                         <Play size={18} />
                         Demo
                       </a>
                       <button
                         onClick={() => openProjectModal(project)}
-                        className="border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:border-blue-400 hover:text-blue-600 transition-colors text-center font-medium whitespace-nowrap"
+                        className="border-2 border-blue-300 text-blue-600 px-6 py-3 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-all text-center font-medium whitespace-nowrap"
                       >
                         View Details
                       </button>
@@ -344,20 +383,29 @@ export default function Portfolio() {
       {/* Education & Certifications Section */}
       <section id="education" className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">Education & Certifications</h2>
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-600 px-4 py-2 rounded-full mb-4">
+              <GraduationCap size={20} />
+              <span className="font-semibold">Academic Background</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Education & Certifications</h2>
+          </div>
           
           {/* Education */}
           <div className="mb-16">
-            <div className="bg-blue-50 p-8 rounded-lg shadow-sm border border-blue-200">
+            <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-8 rounded-xl shadow-xl border border-blue-700 text-white">
               <div className="flex flex-col lg:flex-row justify-between items-start gap-6">
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-3">BSc (Hons) in Information Technology</h3>
-                  <p className="text-lg text-gray-600 mb-2">Sri Lanka Institute of Information Technology (SLIIT)</p>
-                  <p className="text-gray-500">Expected Graduation: 2027</p>
+                  <div className="flex items-center gap-3 mb-3">
+                    <GraduationCap size={32} className="text-blue-200" />
+                    <h3 className="text-2xl md:text-3xl font-bold">BSc (Hons) in Information Technology</h3>
+                  </div>
+                  <p className="text-xl text-blue-100 mb-2">Sri Lanka Institute of Information Technology (SLIIT)</p>
+                  <p className="text-blue-200">Expected Graduation: 2027</p>
                 </div>
                 <div className="text-right">
-                  <span className="text-gray-600 bg-white px-4 py-2 rounded-lg border border-gray-300">2023 - Present</span>
-                  <p className="text-xl font-bold text-blue-600 mt-3">Current GPA: 3.3 / 4.0</p>
+                  <span className="text-blue-100 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/30 inline-block mb-3">2023 - Present</span>
+                  <p className="text-2xl font-bold text-white">Current GPA: 3.3 / 4.0</p>
                 </div>
               </div>
             </div>
@@ -365,28 +413,32 @@ export default function Portfolio() {
 
           {/* Certifications */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">Certifications</h3>
+            <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center flex items-center justify-center gap-2">
+              <Award size={28} className="text-blue-600" />
+              Professional Certifications
+            </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {certifications.map((cert, index) => (
                 <div 
                   key={index} 
-                  className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 overflow-hidden cursor-pointer"
+                  className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-100 overflow-hidden cursor-pointer transform hover:-translate-y-2"
                   onClick={() => openCertificate(cert)}
                 >
-                  <div className="h-48 bg-blue-600 flex items-center justify-center p-4">
-                    <div className="text-white text-center">
-                      <h4 className="font-bold text-lg mb-2">{cert.name.split(' ')[0]}</h4>
-                      <p className="text-blue-100 text-sm">{cert.issuer.split(' ')[0]}</p>
+                  <div className="h-40 bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center p-6 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+                    <div className="text-white text-center relative z-10">
+                      <div className="text-5xl mb-2">{cert.icon}</div>
+                      <h4 className="font-bold text-lg">{cert.name.split(' ').slice(0, 2).join(' ')}</h4>
                     </div>
                   </div>
-                  <div className="p-4">
-                    <h4 className="font-semibold text-gray-800 mb-2">{cert.name}</h4>
-                    <p className="text-sm text-gray-600 mb-1">{cert.issuer}</p>
-                    <p className="text-sm text-gray-500 mb-2">{cert.date}</p>
-                    {cert.verification && (
-                      <p className="text-xs text-blue-600 font-medium">ID: {cert.verification}</p>
+                  <div className="p-5">
+                    <h4 className="font-bold text-gray-800 mb-2 text-lg">{cert.name}</h4>
+                    <p className="text-sm text-gray-600 mb-1 font-medium">{cert.issuer}</p>
+                    <p className="text-sm text-gray-500 mb-3">{cert.date}</p>
+                    {cert.verification && cert.verification !== "N/A" && (
+                      <p className="text-xs text-blue-600 font-mono bg-blue-50 px-2 py-1 rounded">ID: {cert.verification}</p>
                     )}
-                    <button className="text-blue-600 text-sm mt-2 hover:underline font-medium flex items-center gap-1">
+                    <button className="text-blue-600 text-sm mt-3 hover:text-blue-700 font-semibold flex items-center gap-1 hover:gap-2 transition-all">
                       View Certificate <ExternalLink size={14} />
                     </button>
                   </div>
@@ -398,48 +450,51 @@ export default function Portfolio() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 bg-gray-50">
+      <section id="contact" className="py-20 px-4 bg-gradient-to-br from-blue-600 to-blue-900 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-          <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
-            I'm always open to discussing new opportunities and interesting projects
-          </p>
+          <div className="mb-6">
+            <Mail size={48} className="mx-auto mb-4 text-blue-200" />
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h2>
+            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+              Let's collaborate on your next project or discuss new opportunities
+            </p>
+          </div>
           
-          <div className="bg-white rounded-lg shadow-md border border-gray-200 p-8">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="flex flex-col items-center p-6 rounded-lg bg-blue-50 border border-blue-200">
-                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mb-4">
-                  <Phone className="w-6 h-6 text-white" />
+          <div className="bg-white/10 backdrop-blur-md rounded-xl shadow-2xl border border-white/20 p-8">
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex flex-col items-center p-6 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all">
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 shadow-lg">
+                  <Phone className="w-8 h-8 text-blue-600" />
                 </div>
-                <h3 className="font-semibold text-lg mb-2">Phone</h3>
-                <p className="text-gray-700">076-1620836</p>
+                <h3 className="font-bold text-lg mb-2">Phone</h3>
+                <p className="text-blue-100">076-1620836</p>
               </div>
               
-              <div className="flex flex-col items-center p-6 rounded-lg bg-blue-50 border border-blue-200">
-                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mb-4">
-                  <Mail className="w-6 h-6 text-white" />
+              <div className="flex flex-col items-center p-6 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all">
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 shadow-lg">
+                  <Mail className="w-8 h-8 text-blue-600" />
                 </div>
-                <h3 className="font-semibold text-lg mb-2">Email</h3>
-                <p className="text-gray-700">kaveeshamuthunilmi@gmail.com</p>
+                <h3 className="font-bold text-lg mb-2">Email</h3>
+                <p className="text-blue-100 text-sm">kaveeshamuthunilmi@gmail.com</p>
               </div>
               
-              <div className="flex flex-col items-center p-6 rounded-lg bg-blue-50 border border-blue-200">
-                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mb-4">
-                  <MapPin className="w-6 h-6 text-white" />
+              <div className="flex flex-col items-center p-6 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all">
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 shadow-lg">
+                  <MapPin className="w-8 h-8 text-blue-600" />
                 </div>
-                <h3 className="font-semibold text-lg mb-2">Location</h3>
-                <p className="text-gray-700 text-sm">Ehalakanda, Aluthihala, Mapalagama, Galle</p>
+                <h3 className="font-bold text-lg mb-2">Location</h3>
+                <p className="text-blue-100 text-sm">Ehalakanda, Aluthihala, Mapalagama, Galle</p>
               </div>
             </div>
 
-            <div className="mt-12 pt-8 border-t border-gray-200">
-              <div className="flex justify-center gap-6">
+            <div className="mt-10 pt-8 border-t border-white/20">
+              <div className="flex justify-center gap-4">
                 <a href="https://github.com/kaveesha-muthunilmi" target="_blank" rel="noopener noreferrer" 
-                   className="bg-gray-800 text-white p-3 rounded-lg hover:bg-gray-700 transition-colors">
+                   className="bg-white text-gray-800 p-4 rounded-xl hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl transform hover:scale-110">
                   <Github className="w-6 h-6" />
                 </a>
                 <a href="https://linkedin.com/in/kaveesha-muthunilmi" target="_blank" rel="noopener noreferrer"
-                   className="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-colors">
+                   className="bg-white text-blue-600 p-4 rounded-xl hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl transform hover:scale-110">
                   <Linkedin className="w-6 h-6" />
                 </a>
               </div>
@@ -449,52 +504,54 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-4">
+      <footer className="bg-gray-900 text-white py-12 px-4 border-t border-gray-800">
         <div className="max-w-6xl mx-auto text-center">
           <div className="flex justify-center items-center gap-4 mb-4">
-            <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+            <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
               KM
             </div>
-            <span className="text-xl font-bold">Kaveesha Muthunilmi</span>
+            <span className="text-2xl font-bold">Kaveesha Muthunilmi</span>
           </div>
-          <p className="text-gray-400 mb-4">Information Technology Undergraduate</p>
+          <p className="text-gray-400 mb-4">Information Technology Undergraduate | Full-Stack & Mobile Developer</p>
           <p className="text-gray-500 text-sm">© 2024 Kaveesha Muthunilmi. All rights reserved.</p>
         </div>
       </footer>
 
       {/* Certificate Modal */}
       {selectedCert && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg max-w-4xl max-h-[90vh] overflow-auto">
-            <div className="p-6 border-b border-gray-200 flex justify-between items-center bg-blue-50">
-              <h3 className="text-xl font-bold text-gray-800">{selectedCert.name}</h3>
+        <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
+          <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-auto shadow-2xl">
+            <div className="p-6 border-b border-gray-200 flex justify-between items-center bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-t-xl">
+              <div className="flex items-center gap-3">
+                <div className="text-4xl">{selectedCert.icon}</div>
+                <h3 className="text-2xl font-bold">{selectedCert.name}</h3>
+              </div>
               <button
                 onClick={closeCertificate}
-                className="text-gray-500 hover:text-gray-700 p-2 rounded-lg hover:bg-gray-100"
+                className="text-white hover:bg-white/20 p-2 rounded-lg transition-all"
               >
                 <X size={24} />
               </button>
             </div>
-            <div className="p-6">
-              <img 
-                src={selectedCert.image} 
-                alt={selectedCert.name}
-                className="w-full h-auto rounded border border-gray-200"
-              />
-              <div className="mt-4 p-4 bg-blue-50 rounded">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <p className="font-semibold text-gray-700">Issuer:</p>
-                    <p className="text-gray-600">{selectedCert.issuer}</p>
+            <div className="p-8">
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl border-2 border-blue-200 mb-6">
+                <div className="text-center mb-4">
+                  <div className="text-6xl mb-4">{selectedCert.icon}</div>
+                  <h4 className="text-3xl font-bold text-gray-800 mb-2">{selectedCert.name}</h4>
+                </div>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-white p-4 rounded-lg shadow-sm">
+                    <p className="font-semibold text-gray-700 mb-1">Issuer:</p>
+                    <p className="text-gray-600 text-lg">{selectedCert.issuer}</p>
                   </div>
-                  <div>
-                    <p className="font-semibold text-gray-700">Date:</p>
-                    <p className="text-gray-600">{selectedCert.date}</p>
+                  <div className="bg-white p-4 rounded-lg shadow-sm">
+                    <p className="font-semibold text-gray-700 mb-1">Date:</p>
+                    <p className="text-gray-600 text-lg">{selectedCert.date}</p>
                   </div>
-                  {selectedCert.verification && (
-                    <div className="md:col-span-2">
-                      <p className="font-semibold text-gray-700">Verification Code:</p>
-                      <p className="text-blue-600 font-mono">{selectedCert.verification}</p>
+                  {selectedCert.verification && selectedCert.verification !== "N/A" && (
+                    <div className="md:col-span-2 bg-white p-4 rounded-lg shadow-sm">
+                      <p className="font-semibold text-gray-700 mb-1">Verification Code:</p>
+                      <p className="text-blue-600 font-mono text-lg">{selectedCert.verification}</p>
                     </div>
                   )}
                 </div>
@@ -506,42 +563,54 @@ export default function Portfolio() {
 
       {/* Project Modal */}
       {selectedProject && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg max-w-4xl max-h-[90vh] overflow-auto">
-            <div className="p-6 border-b border-gray-200 flex justify-between items-center bg-blue-50">
-              <h3 className="text-xl font-bold text-gray-800">{selectedProject.title}</h3>
+        <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
+          <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-auto shadow-2xl">
+            <div className="p-6 border-b border-gray-200 flex justify-between items-center bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-t-xl">
+              <div className="flex items-center gap-3">
+                <Code size={28} />
+                <h3 className="text-2xl font-bold">{selectedProject.title}</h3>
+              </div>
               <button
                 onClick={closeProjectModal}
-                className="text-gray-500 hover:text-gray-700 p-2 rounded-lg hover:bg-gray-100"
+                className="text-white hover:bg-white/20 p-2 rounded-lg transition-all"
               >
                 <X size={24} />
               </button>
             </div>
-            <div className="p-6">
+            <div className="p-8">
               <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-800 mb-3">Project Description</h4>
-                <p className="text-gray-600 leading-relaxed">{selectedProject.description}</p>
+                <h4 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+                  <div className="w-1 h-6 bg-blue-600 rounded"></div>
+                  Project Description
+                </h4>
+                <p className="text-gray-600 leading-relaxed text-lg">{selectedProject.description}</p>
               </div>
 
               <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-800 mb-3">Key Features</h4>
-                <div className="grid md:grid-cols-2 gap-2">
+                <h4 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+                  <div className="w-1 h-6 bg-blue-600 rounded"></div>
+                  Key Features
+                </h4>
+                <div className="grid md:grid-cols-2 gap-3">
                   {selectedProject.features.map((feature, index) => (
-                    <div key={index} className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                      <span className="text-gray-600">{feature}</span>
+                    <div key={index} className="flex items-center gap-3 bg-blue-50 p-3 rounded-lg border border-blue-200">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700 font-medium">{feature}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-800 mb-3">Technologies Used</h4>
+                <h4 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+                  <div className="w-1 h-6 bg-blue-600 rounded"></div>
+                  Technologies Used
+                </h4>
                 <div className="flex flex-wrap gap-2">
                   {selectedProject.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="bg-blue-100 text-blue-700 px-3 py-1 rounded text-sm border border-blue-200"
+                      className="bg-gradient-to-r from-blue-100 to-blue-200 text-blue-700 px-4 py-2 rounded-lg text-sm border border-blue-300 font-semibold"
                     >
                       {tech}
                     </span>
@@ -554,18 +623,18 @@ export default function Portfolio() {
                   href={selectedProject.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 bg-gray-900 text-white px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors text-center font-medium flex items-center justify-center gap-2"
+                  className="flex-1 bg-gradient-to-r from-gray-800 to-gray-900 text-white px-4 py-3 rounded-lg hover:from-gray-900 hover:to-black transition-all text-center font-semibold flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
                 >
-                  <Github size={18} />
+                  <Github size={20} />
                   GitHub Repository
                 </a>
                 <a
                   href={selectedProject.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 transition-colors text-center font-medium flex items-center justify-center gap-2"
+                  className="flex-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-3 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all text-center font-semibold flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
                 >
-                  <Play size={18} />
+                  <Play size={20} />
                   Demo Video
                 </a>
               </div>
@@ -573,6 +642,28 @@ export default function Portfolio() {
           </div>
         </div>
       )}
+
+      <style jsx>{`
+        .bg-grid-pattern {
+          background-image: 
+            linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+          background-size: 20px 20px;
+        }
+        
+        @keyframes pulse {
+          0%, 100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.5;
+          }
+        }
+        
+        .animate-pulse {
+          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+      `}</style>
     </div>
   );
 }
