@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
 import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink, Menu, X } from 'lucide-react';
+
+// Certificate images import කරන්න
+import webdesignCert from './assets/certificates/webdesign.png';
+import cppCert from './assets/certificates/c++.jpg';
+import cCert from './assets/certificates/cLanguage.png';
+import pythonCert from './assets/certificates/python.png';
+import htmlCert from './assets/certificates/html.jpg';
+import japuraCert from './assets/certificates/japura.png';
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [selectedCert, setSelectedCert] = useState(null);
 
   const projects = [
     {
@@ -32,11 +39,46 @@ export default function Portfolio() {
   ];
 
   const certifications = [
-    { name: "Web Design for Beginners", issuer: "University of Moratuwa", date: "May 2024" },
-    { name: "Python for Beginners", issuer: "University of Moratuwa", date: "Apr 2023" },
-    { name: "Introduction to C++", issuer: "Sololearn", date: "Aug 2024" },
-    { name: "Introduction to HTML", issuer: "Sololearn", date: "Aug 2024" },
-    { name: "Introduction to C", issuer: "Sololearn", date: "Jul 2024" }
+    { 
+      name: "Web Design for Beginners", 
+      issuer: "University of Moratuwa", 
+      date: "May 2024",
+      image: webdesignCert,
+      verification: "HG9GMxV9u2"
+    },
+    { 
+      name: "Python for Beginners", 
+      issuer: "University of Moratuwa", 
+      date: "Apr 2023",
+      image: pythonCert,
+      verification: "Xrwq8BADeT"
+    },
+    { 
+      name: "Introduction to C++", 
+      issuer: "Sololearn", 
+      date: "Aug 2024",
+      image: cppCert,
+      verification: "CC-SJZTUSJB"
+    },
+    { 
+      name: "Introduction to HTML", 
+      issuer: "Sololearn", 
+      date: "Aug 2024",
+      image: htmlCert
+    },
+    { 
+      name: "Introduction to C", 
+      issuer: "Sololearn", 
+      date: "Jul 2024",
+      image: cCert,
+      verification: "CC-035JM6WO"
+    },
+    { 
+      name: "J'PURAXTREME Participation", 
+      issuer: "IEEE University of Sri Jayewardenepura", 
+      date: "Oct 2025",
+      image: japuraCert
+    }
   ];
 
   const skills = {
@@ -51,6 +93,14 @@ export default function Portfolio() {
     setActiveSection(section);
     setMobileMenuOpen(false);
     document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const openCertificate = (cert) => {
+    setSelectedCert(cert);
+  };
+
+  const closeCertificate = () => {
+    setSelectedCert(null);
   };
 
   return (
@@ -196,22 +246,39 @@ export default function Portfolio() {
                 <div>
                   <h3 className="text-2xl font-semibold text-gray-800">BSc (Hons) in Information Technology</h3>
                   <p className="text-gray-600 mt-2">Sri Lanka Institute of Information Technology (SLIIT)</p>
-                  
+                  <p className="text-gray-600">Expected Graduation: 2027</p>
                 </div>
                 <span className="text-gray-600">2023 - present</span>
               </div>
-              
+              <p className="text-lg font-semibold text-blue-600">Current GPA: 3.3 / 4.0</p>
             </div>
           </div>
 
           <div>
             <h3 className="text-2xl font-semibold text-gray-800 mb-6">Certifications</h3>
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {certifications.map((cert, index) => (
-                <div key={index} className="bg-gray-50 p-4 rounded-lg border-l-4 border-blue-600">
-                  <h4 className="font-semibold text-gray-800">{cert.name}</h4>
-                  <p className="text-sm text-gray-600">{cert.issuer}</p>
-                  <p className="text-sm text-gray-500">{cert.date}</p>
+                <div 
+                  key={index} 
+                  className="bg-gray-50 p-4 rounded-lg border-l-4 border-blue-600 hover:shadow-md transition-shadow cursor-pointer"
+                  onClick={() => openCertificate(cert)}
+                >
+                  <div className="mb-3 h-40 bg-white rounded border flex items-center justify-center overflow-hidden">
+                    <img 
+                      src={cert.image} 
+                      alt={cert.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h4 className="font-semibold text-gray-800 mb-2">{cert.name}</h4>
+                  <p className="text-sm text-gray-600 mb-1">{cert.issuer}</p>
+                  <p className="text-sm text-gray-500 mb-2">{cert.date}</p>
+                  {cert.verification && (
+                    <p className="text-xs text-blue-600">Verification: {cert.verification}</p>
+                  )}
+                  <button className="text-blue-600 text-sm mt-2 hover:underline">
+                    Click to View Certificate
+                  </button>
                 </div>
               ))}
             </div>
@@ -238,10 +305,9 @@ export default function Portfolio() {
               <div className="flex flex-col items-center">
                 <MapPin className="w-8 h-8 text-blue-600 mb-3" />
                 <h3 className="font-semibold text-gray-800 mb-2">Location</h3>
-                <p className="text-gray-600">Ehalakanda,Aluthihala,Mapalagama, Galle</p>
+                <p className="text-gray-600">Ehalakanda, Aluthihala, Mapalagama, Galle</p>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -252,6 +318,37 @@ export default function Portfolio() {
           <p className="text-gray-400">© 2024 Kaveesha Muthunilmi. All rights reserved.</p>
         </div>
       </footer>
+
+      {/* Certificate Modal */}
+      {selectedCert && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg max-w-4xl max-h-[90vh] overflow-auto">
+            <div className="p-4 border-b flex justify-between items-center">
+              <h3 className="text-xl font-semibold">{selectedCert.name}</h3>
+              <button
+                onClick={closeCertificate}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                <X size={24} />
+              </button>
+            </div>
+            <div className="p-4">
+              <img 
+                src={selectedCert.image} 
+                alt={selectedCert.name}
+                className="w-full h-auto rounded"
+              />
+              <div className="mt-4 p-4 bg-gray-50 rounded">
+                <p><strong>Issuer:</strong> {selectedCert.issuer}</p>
+                <p><strong>Date:</strong> {selectedCert.date}</p>
+                {selectedCert.verification && (
+                  <p><strong>Verification Code:</strong> {selectedCert.verification}</p>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
