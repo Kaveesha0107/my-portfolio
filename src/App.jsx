@@ -196,11 +196,11 @@ export default function Portfolio() {
                 <div>
                   <h3 className="text-2xl font-semibold text-gray-800">BSc (Hons) in Information Technology</h3>
                   <p className="text-gray-600 mt-2">Sri Lanka Institute of Information Technology (SLIIT)</p>
-                  <p className="text-gray-600">Expected Graduation: 2027</p>
+                  
                 </div>
                 <span className="text-gray-600">2023 - present</span>
               </div>
-              <p className="text-lg font-semibold text-blue-600">Current GPA: 3.3 / 4.0</p>
+              
             </div>
           </div>
 
@@ -233,18 +233,15 @@ export default function Portfolio() {
               <div className="flex flex-col items-center">
                 <Mail className="w-8 h-8 text-blue-600 mb-3" />
                 <h3 className="font-semibold text-gray-800 mb-2">Email</h3>
-                <p className="text-gray-600">kmuthunilmi@gmail.com</p>
+                <p className="text-gray-600">kaveeshamuthunilmi@gmail.com</p>
               </div>
               <div className="flex flex-col items-center">
                 <MapPin className="w-8 h-8 text-blue-600 mb-3" />
                 <h3 className="font-semibold text-gray-800 mb-2">Location</h3>
-                <p className="text-gray-600">Mapalagama, Galle</p>
+                <p className="text-gray-600">Ehalakanda,Aluthihala,Mapalagama, Galle</p>
               </div>
             </div>
-            <div className="mt-8 pt-8 border-t border-gray-200">
-              <p className="text-gray-600 mb-4">Reference: Kavindu Anjana - Software Engineer</p>
-              <p className="text-sm text-gray-500">Phone: 0711235578 | Email: kavindu@gmail.com</p>
-            </div>
+
           </div>
         </div>
       </section>
