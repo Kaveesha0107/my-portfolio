@@ -472,9 +472,6 @@ export default function Portfolio() {
                       <span>Expected Graduation: 2027</span>
                       <span>2023 - Present</span>
                     </div>
-                    <div className="bg-blue-50 p-3 rounded-lg border border-blue-100">
-                      <p className="font-medium text-blue-800">Current GPA: <span className="text-gray-800">3.3 / 4.0</span></p>
-                    </div>
                   </div>
                   
                   <div className="border border-gray-200 rounded-lg p-6 hover:border-blue-300 transition-colors">
