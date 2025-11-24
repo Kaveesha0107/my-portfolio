@@ -85,7 +85,6 @@ export default function Portfolio() {
       issuer: "University of Moratuwa", 
       date: "May 2024",
       verification: "HG9GMxV9u2",
-      icon: "🎨",
       image: webdesignCert
     },
     { 
@@ -93,7 +92,6 @@ export default function Portfolio() {
       issuer: "University of Moratuwa", 
       date: "Apr 2023",
       verification: "Xrwq8BADeT",
-      icon: "🐍",
       image: pythonCert
     },
     { 
@@ -101,7 +99,6 @@ export default function Portfolio() {
       issuer: "Sololearn", 
       date: "Aug 2024",
       verification: "CC-SJZTUSJB",
-      icon: "⚙️",
       image: cppCert
     },
     { 
@@ -109,7 +106,6 @@ export default function Portfolio() {
       issuer: "Sololearn", 
       date: "Aug 2024",
       verification: "N/A",
-      icon: "🌐",
       image: htmlCert
     },
     { 
@@ -117,7 +113,6 @@ export default function Portfolio() {
       issuer: "Sololearn", 
       date: "Jul 2024",
       verification: "CC-035JM6WO",
-      icon: "💻",
       image: cCert
     },
     { 
@@ -125,7 +120,6 @@ export default function Portfolio() {
       issuer: "IEEE University of Sri Jayewardenepura", 
       date: "Oct 2025",
       verification: "N/A",
-      icon: "🏆",
       image: jpuraCert
     }
   ];
@@ -162,13 +156,13 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-gray-50">
       {/* Navigation Header */}
       <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-200 z-50">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-gray-700 to-gray-900 rounded-full flex items-center justify-center text-white font-bold shadow-sm">
+              <div className="w-10 h-10 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold shadow-sm">
                 KM
               </div>
               <span className="text-xl font-bold text-gray-800 hidden sm:block">
@@ -184,7 +178,7 @@ export default function Portfolio() {
                   onClick={() => scrollToSection(section)}
                   className={`capitalize font-medium px-4 py-2 rounded-lg transition-all duration-300 ${
                     activeSection === section
-                      ? 'text-white bg-gradient-to-r from-gray-700 to-gray-800 shadow-sm'
+                      ? 'text-white bg-blue-700 shadow-sm'
                       : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                   }`}
                 >
@@ -223,46 +217,43 @@ export default function Portfolio() {
         </nav>
       </header>
 
-      {/* Hero Section */}
-      <section id="home" className="pt-28 pb-20 px-4 bg-gradient-to-br from-gray-800 via-gray-900 to-black text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+      {/* Hero Section -- lighter solid blue */}
+      <section id="home" className="pt-28 pb-20 px-4 bg-blue-700 text-white relative overflow-hidden">
         <div className="max-w-6xl mx-auto text-center relative z-10">
           <div className="mb-8">
-            <div className="w-48 h-48 mx-auto rounded-full overflow-hidden mb-6 shadow-2xl border-4 border-white/20 backdrop-blur-sm bg-white/10">
+            <div className="w-48 h-48 mx-auto rounded-full overflow-hidden mb-6 shadow-2xl border-4 border-white/20 bg-white/5">
               <img 
                 src={profileImage} 
                 alt="Kaveesha Muthunilmi"
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'flex';
                 }}
               />
-              <div className="w-full h-full bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center text-white hidden">
+              <div className="w-full h-full bg-blue-600 flex items-center justify-center text-white hidden">
                 <span className="text-6xl font-bold">KM</span>
               </div>
             </div>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">KAVEESHA MUTHUNILMI</h1>
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <Code size={24} className="text-gray-300" />
-            <p className="text-2xl text-gray-300 font-medium">Information Technology Undergraduate</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-3 drop-shadow">KAVEESHA MUTHUNILMI</h1>
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Code size={24} className="text-white/90" />
+            <p className="text-xl text-white/90 font-medium">Information Technology Undergraduate</p>
           </div>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-            Passionate IT undergraduate specializing in full-stack and mobile development. 
-            Creating innovative software solutions with modern technologies and best practices.
+          <p className="text-base text-white/80 max-w-3xl mx-auto mb-8 leading-relaxed">
+            Passionate IT undergraduate specializing in full-stack and mobile development. Creating practical, user-friendly applications using modern tools and best practices.
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
             <button
               onClick={() => scrollToSection('projects')}
-              className="bg-white text-gray-800 px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl font-semibold flex items-center gap-2 transform hover:scale-105"
+              className="bg-white text-blue-700 px-6 py-3 rounded-lg hover:bg-gray-100 transition-all duration-200 shadow-md font-semibold flex items-center gap-2"
             >
-              <Briefcase size={20} />
+              <Briefcase size={18} />
               View Projects
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white/10 transition-all duration-300 font-semibold backdrop-blur-sm transform hover:scale-105"
+              className="border-2 border-white text-white px-6 py-3 rounded-lg hover:bg-white/10 transition-all duration-200 font-semibold"
             >
               Contact Me
             </button>
@@ -270,31 +261,42 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About Section (UPDATED: shorter blue tones + About Me inserted) */}
       <section id="about" className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-700 px-4 py-2 rounded-full mb-4">
-              <Award size={20} />
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full mb-4">
+              <Award size={18} />
               <span className="font-semibold">Technical Expertise</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Skills & Expertise</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Comprehensive skill set spanning multiple technologies and frameworks
+
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+
+            <p className="text-base text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              I am a Software Engineering Undergraduate at SLIIT with a strong interest in full-stack development, mobile application development, and modern software architecture. I enjoy building practical, user-focused solutions and writing clean, scalable, and maintainable code.
+            </p>
+
+            <p className="text-base text-gray-700 max-w-3xl mx-auto mt-4 leading-relaxed">
+              My technical expertise includes <strong>Java, Python, C++, JavaScript/TypeScript, React.js, Node.js, Express.js, Firebase, MongoDB, SQL Server</strong>, and tools such as <strong>Git/GitHub, Agile methodologies,</strong> and <strong>Electron.js</strong>. I continuously develop my communication, teamwork, and leadership skills to grow as a well-rounded software professional.
+            </p>
+
+            <p className="text-base text-gray-700 max-w-3xl mx-auto mt-4 leading-relaxed">
+              I’m a curious and passionate learner who loves exploring how technology can simplify everyday life. Whether it’s a web app, mobile app, or an innovative side project, I enjoy creating clean, simple, and impactful digital experiences. Currently, I’m expanding my full-stack skills and working on meaningful projects that challenge me to improve every day. I’m always open to learning, collaborating, and building something exciting.
             </p>
           </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {Object.entries(skills).map(([category, skillList]) => (
-              <div key={category} className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+              <div key={category} className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-all">
                 <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
-                  <div className="w-2 h-2 bg-gray-600 rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-blue-700 rounded-full"></div>
                   {category}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {skillList.map((skill) => (
                     <span
                       key={skill}
-                      className="bg-gray-50 px-3 py-1.5 rounded-lg text-sm text-gray-700 border border-gray-300 hover:border-gray-400 hover:text-gray-900 hover:shadow-sm transition-all cursor-default"
+                      className="bg-blue-100 px-3 py-1.5 rounded-lg text-sm text-blue-700 border border-blue-100 font-medium"
                     >
                       {skill}
                     </span>
@@ -309,49 +311,44 @@ export default function Portfolio() {
       {/* Projects Section */}
       <section id="projects" className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-700 px-4 py-2 rounded-full mb-4">
-              <Briefcase size={20} />
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full mb-4">
+              <Briefcase size={18} />
               <span className="font-semibold">Portfolio</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Featured Projects</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Showcasing innovative solutions across web and mobile platforms
+              Showcasing solutions across web and mobile platforms.
             </p>
           </div>
           
           <div className="space-y-6">
             {projects.map((project) => (
-              <div key={project.id} className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 overflow-hidden transform hover:-translate-y-1">
+              <div key={project.id} className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all border border-gray-200 overflow-hidden">
                 <div className="p-6">
                   <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                     <div className="flex-1">
                       <div className="flex items-start justify-between mb-3 flex-wrap gap-2">
                         <h3 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
-                          <Code size={24} className="text-gray-600" />
+                          <Code size={20} className="text-gray-600" />
                           {project.title}
                         </h3>
-                        <span className={`px-4 py-1.5 rounded-full text-sm font-semibold shadow-sm ${
+                        <span className={`px-3 py-1.5 rounded-full text-sm font-semibold shadow-sm ${
                           project.status === 'Completed' 
-                            ? 'bg-gradient-to-r from-green-500 to-green-600 text-white' 
-                            : 'bg-gradient-to-r from-yellow-500 to-yellow-600 text-white'
+                            ? 'bg-green-100 text-green-800' 
+                            : 'bg-yellow-100 text-yellow-800'
                         }`}>
                           {project.status}
                         </span>
                       </div>
                       
-                      <p className="text-gray-600 mb-4 leading-relaxed">
-                        {project.description}
-                      </p>
+                      <p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>
                       
                       <div className="mb-4">
-                        <h4 className="font-semibold text-gray-700 mb-3 flex items-center gap-2">
-                          <div className="w-1 h-4 bg-gray-600 rounded"></div>
-                          Key Features
-                        </h4>
+                        <h4 className="font-semibold text-gray-700 mb-3">Key Features</h4>
                         <div className="flex flex-wrap gap-2">
                           {project.features.map((feature, index) => (
-                            <span key={index} className="bg-gray-50 text-gray-700 px-3 py-1.5 rounded-lg text-sm border border-gray-300 font-medium">
+                            <span key={index} className="bg-gray-50 text-gray-700 px-3 py-1.5 rounded-lg text-sm border border-gray-200 font-medium">
                               {feature}
                             </span>
                           ))}
@@ -362,7 +359,7 @@ export default function Portfolio() {
                         {project.tech.map((tech) => (
                           <span
                             key={tech}
-                            className="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg text-sm border border-gray-300 font-medium"
+                            className="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg text-sm border border-gray-200 font-medium"
                           >
                             {tech}
                           </span>
@@ -375,18 +372,18 @@ export default function Portfolio() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-gradient-to-r from-gray-700 to-gray-800 text-white px-6 py-3 rounded-lg hover:from-gray-800 hover:to-gray-900 transition-all text-center font-medium flex items-center justify-center gap-2 whitespace-nowrap shadow-sm hover:shadow-md"
+                        className="bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition-all text-center font-medium flex items-center justify-center gap-2 whitespace-nowrap"
                       >
-                        <Github size={18} />
+                        <Github size={16} />
                         GitHub
                       </a>
                       <a
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-6 py-3 rounded-lg hover:from-gray-700 hover:to-gray-800 transition-all text-center font-medium flex items-center justify-center gap-2 whitespace-nowrap shadow-sm hover:shadow-md"
+                        className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all text-center font-medium flex items-center justify-center gap-2 whitespace-nowrap"
                       >
-                        <Play size={18} />
+                        <Play size={16} />
                         Demo
                       </a>
                       <button
@@ -407,29 +404,26 @@ export default function Portfolio() {
       {/* Education & Certifications Section */}
       <section id="education" className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-700 px-4 py-2 rounded-full mb-4">
-              <GraduationCap size={20} />
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full mb-4">
+              <GraduationCap size={18} />
               <span className="font-semibold">Academic Background</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Education & Certifications</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Education & Certifications</h2>
           </div>
           
           {/* Education */}
-          <div className="mb-16">
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-xl shadow-lg border border-gray-700 text-white">
+          <div className="mb-12">
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
               <div className="flex flex-col lg:flex-row justify-between items-start gap-6">
                 <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-3">
-                    <GraduationCap size={32} className="text-gray-300" />
-                    <h3 className="text-2xl md:text-3xl font-bold">BSc (Hons) in Information Technology</h3>
-                  </div>
-                  <p className="text-xl text-gray-300 mb-2">Sri Lanka Institute of Information Technology (SLIIT)</p>
-                  <p className="text-gray-400">Expected Graduation: 2027</p>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-2">BSc (Hons) in Information Technology</h3>
+                  <p className="text-lg text-gray-600 mb-1">Sri Lanka Institute of Information Technology (SLIIT)</p>
+                  <p className="text-sm text-gray-500">Expected Graduation: 2027</p>
                 </div>
                 <div className="text-right">
-                  <span className="text-gray-300 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20 inline-block mb-3">2023 - Present</span>
-                  <p className="text-2xl font-bold text-white">Current GPA: 3.3 / 4.0</p>
+                  <span className="text-gray-600 bg-gray-50 px-4 py-2 rounded-lg border border-gray-100 inline-block mb-3">2023 - Present</span>
+                  <p className="text-xl font-bold text-blue-700">Current GPA: 3.3 / 4.0</p>
                 </div>
               </div>
             </div>
@@ -437,40 +431,35 @@ export default function Portfolio() {
 
           {/* Certifications */}
           <div>
-            <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center flex items-center justify-center gap-2">
-              <Award size={28} className="text-gray-600" />
-              Professional Certifications
-            </h3>
+            <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">Professional Certifications</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {certifications.map((cert, index) => (
                 <div 
                   key={index} 
-                  className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 overflow-hidden cursor-pointer transform hover:-translate-y-2"
+                  className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all border border-gray-200 overflow-hidden cursor-pointer"
                   onClick={() => openCertificate(cert)}
                 >
-                  <div className="h-40 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center p-6 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+                  {/* header: solid lighter blue block with certificate image centered (no emoji/text overlay) */}
+                  <div className="h-40 bg-blue-700 flex items-center justify-center p-4 overflow-hidden">
                     <img 
                       src={cert.image} 
                       alt={cert.name}
-                      className="w-full h-full object-cover opacity-90"
+                      className="max-h-full max-w-full object-contain"
                     />
-                    <div className="absolute inset-0 bg-black/30"></div>
-                    <div className="text-white text-center relative z-10">
-                      <div className="text-4xl mb-2">{cert.icon}</div>
-                      <h4 className="font-bold text-lg drop-shadow-lg">{cert.name.split(' ').slice(0, 2).join(' ')}</h4>
-                    </div>
                   </div>
+
                   <div className="p-5">
                     <h4 className="font-bold text-gray-800 mb-2 text-lg">{cert.name}</h4>
                     <p className="text-sm text-gray-600 mb-1 font-medium">{cert.issuer}</p>
                     <p className="text-sm text-gray-500 mb-3">{cert.date}</p>
                     {cert.verification && cert.verification !== "N/A" && (
-                      <p className="text-xs text-gray-600 font-mono bg-gray-100 px-2 py-1 rounded">ID: {cert.verification}</p>
+                      <p className="text-xs text-blue-700 font-mono bg-blue-100 px-2 py-1 rounded">ID: {cert.verification}</p>
                     )}
-                    <button className="text-gray-700 text-sm mt-3 hover:text-gray-900 font-semibold flex items-center gap-1 hover:gap-2 transition-all">
-                      View Certificate <ExternalLink size={14} />
-                    </button>
+                    <div className="mt-3">
+                      <button className="text-blue-700 text-sm font-semibold flex items-center gap-2">
+                        View Certificate <ExternalLink size={14} />
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -480,52 +469,52 @@ export default function Portfolio() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 bg-gradient-to-br from-gray-800 to-gray-900 text-white">
+      <section id="contact" className="py-20 px-4 bg-blue-700 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-6">
-            <Mail size={48} className="mx-auto mb-4 text-gray-300" />
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Let's collaborate on your next project or discuss new opportunities
+            <Mail size={48} className="mx-auto mb-4 text-white/80" />
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+            <p className="text-lg text-white/80 max-w-2xl mx-auto">
+              Let's collaborate on your next project or discuss new opportunities.
             </p>
           </div>
           
-          <div className="bg-white/10 backdrop-blur-md rounded-xl shadow-lg border border-white/20 p-8">
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="flex flex-col items-center p-6 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 shadow-lg">
-                  <Phone className="w-8 h-8 text-gray-700" />
+          <div className="bg-white/10 rounded-xl shadow-lg border border-white/10 p-6">
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="flex flex-col items-center p-4 rounded-xl bg-white/5 border border-white/5">
+                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-3">
+                  <Phone className="w-6 h-6 text-blue-700" />
                 </div>
-                <h3 className="font-bold text-lg mb-2">Phone</h3>
-                <p className="text-gray-300">076-1620836</p>
+                <h3 className="font-bold text-lg mb-1">Phone</h3>
+                <p className="text-white/80">076-1620836</p>
               </div>
               
-              <div className="flex flex-col items-center p-6 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 shadow-lg">
-                  <Mail className="w-8 h-8 text-gray-700" />
+              <div className="flex flex-col items-center p-4 rounded-xl bg-white/5 border border-white/5">
+                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-3">
+                  <Mail className="w-6 h-6 text-blue-700" />
                 </div>
-                <h3 className="font-bold text-lg mb-2">Email</h3>
-                <p className="text-gray-300 text-sm">kaveeshamuthunilmi@gmail.com</p>
+                <h3 className="font-bold text-lg mb-1">Email</h3>
+                <p className="text-white/80 text-sm">kaveeshamuthunilmi@gmail.com</p>
               </div>
               
-              <div className="flex flex-col items-center p-6 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 shadow-lg">
-                  <MapPin className="w-8 h-8 text-gray-700" />
+              <div className="flex flex-col items-center p-4 rounded-xl bg-white/5 border border-white/5">
+                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-3">
+                  <MapPin className="w-6 h-6 text-blue-700" />
                 </div>
-                <h3 className="font-bold text-lg mb-2">Location</h3>
-                <p className="text-gray-300 text-sm">Ehalakanda, Aluthihala, Mapalagama, Galle</p>
+                <h3 className="font-bold text-lg mb-1">Location</h3>
+                <p className="text-white/80 text-sm">Ehalakanda, Aluthihala, Mapalagama, Galle</p>
               </div>
             </div>
 
-            <div className="mt-10 pt-8 border-t border-white/20">
+            <div className="mt-8 pt-6 border-t border-white/10">
               <div className="flex justify-center gap-4">
                 <a href="https://github.com/kaveesha-muthunilmi" target="_blank" rel="noopener noreferrer" 
-                   className="bg-white text-gray-800 p-4 rounded-xl hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl transform hover:scale-110">
-                  <Github className="w-6 h-6" />
+                   className="bg-white text-blue-700 p-3 rounded-lg hover:bg-gray-100 transition-all shadow-sm">
+                  <Github />
                 </a>
                 <a href="https://linkedin.com/in/kaveesha-muthunilmi" target="_blank" rel="noopener noreferrer"
-                   className="bg-white text-gray-700 p-4 rounded-xl hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl transform hover:scale-110">
-                  <Linkedin className="w-6 h-6" />
+                   className="bg-white text-blue-700 p-3 rounded-lg hover:bg-gray-100 transition-all shadow-sm">
+                  <Linkedin />
                 </a>
               </div>
             </div>
@@ -537,7 +526,7 @@ export default function Portfolio() {
       <footer className="bg-gray-900 text-white py-12 px-4 border-t border-gray-800">
         <div className="max-w-6xl mx-auto text-center">
           <div className="flex justify-center items-center gap-4 mb-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-900 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+            <div className="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
               KM
             </div>
             <span className="text-2xl font-bold">Kaveesha Muthunilmi</span>
@@ -549,154 +538,99 @@ export default function Portfolio() {
 
       {/* Certificate Modal */}
       {selectedCert && (
-        <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
-          <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-auto shadow-2xl">
-            <div className="p-6 border-b border-gray-200 flex justify-between items-center bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-t-xl">
-              <div className="flex items-center gap-3">
-                <div className="text-4xl">{selectedCert.icon}</div>
-                <h3 className="text-2xl font-bold">{selectedCert.name}</h3>
-              </div>
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl">
+            <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-blue-700 text-white rounded-t-xl">
+              <h3 className="text-lg font-bold">{selectedCert.name}</h3>
               <button
                 onClick={closeCertificate}
-                className="text-white hover:bg-white/20 p-2 rounded-lg transition-all"
+                className="text-white hover:bg-white/10 p-2 rounded-md"
               >
-                <X size={24} />
+                <X size={20} />
               </button>
             </div>
-            <div className="p-8">
-              <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-xl border-2 border-gray-300 mb-6">
-                <div className="text-center mb-6">
-                  <img 
-                    src={selectedCert.image} 
+
+            {/* Modal body: two-column layout on wide screens. Left: image (fits), Right: details */}
+            <div className="p-4">
+              <div className="flex flex-col md:flex-row gap-4">
+                <div style={{ flex: '1 1 60%', display: 'flex', alignItems: 'center', justifyContent: 'center', maxHeight: '70vh', overflow: 'hidden' }}>
+                  {/* Image fits to available area without causing the page to scroll */}
+                  <img
+                    src={selectedCert.image}
                     alt={selectedCert.name}
-                    className="max-w-full h-auto max-h-96 mx-auto rounded-lg shadow-lg"
+                    style={{ maxWidth: '100%', maxHeight: '70vh', objectFit: 'contain', borderRadius: 8 }}
                   />
                 </div>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-white p-4 rounded-lg shadow-sm">
-                    <p className="font-semibold text-gray-700 mb-1">Issuer:</p>
-                    <p className="text-gray-600 text-lg">{selectedCert.issuer}</p>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg shadow-sm">
-                    <p className="font-semibold text-gray-700 mb-1">Date:</p>
-                    <p className="text-gray-600 text-lg">{selectedCert.date}</p>
-                  </div>
-                  {selectedCert.verification && selectedCert.verification !== "N/A" && (
-                    <div className="md:col-span-2 bg-white p-4 rounded-lg shadow-sm">
-                      <p className="font-semibold text-gray-700 mb-1">Verification Code:</p>
-                      <p className="text-gray-600 font-mono text-lg">{selectedCert.verification}</p>
+
+                <div style={{ flex: '1 1 40%', overflowY: 'auto', paddingRight: 8 }}>
+                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <p className="font-semibold text-gray-700 mb-2">Issuer</p>
+                    <p className="text-gray-600 mb-3">{selectedCert.issuer}</p>
+
+                    <p className="font-semibold text-gray-700 mb-2">Date</p>
+                    <p className="text-gray-600 mb-3">{selectedCert.date}</p>
+
+                    {selectedCert.verification && selectedCert.verification !== "N/A" && (
+                      <>
+                        <p className="font-semibold text-gray-700 mb-2">Verification Code</p>
+                        <p className="text-gray-600 font-mono mb-3">{selectedCert.verification}</p>
+                      </>
+                    )}
+
+                    <div className="mt-4 flex gap-2">
+                      <a href={selectedCert.image} target="_blank" rel="noreferrer" className="px-4 py-2 bg-blue-700 text-white rounded-md font-semibold">
+                        Open Image
+                      </a>
+                      <button onClick={closeCertificate} className="px-4 py-2 border border-gray-300 rounded-md">
+                        Close
+                      </button>
                     </div>
-                  )}
+                  </div>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       )}
 
       {/* Project Modal */}
       {selectedProject && (
-        <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-auto shadow-2xl">
-            <div className="p-6 border-b border-gray-200 flex justify-between items-center bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-t-xl">
+            <div className="p-4 border-b border-gray-200 flex justify-between items-center bg-blue-700 text-white rounded-t-xl">
               <div className="flex items-center gap-3">
-                <Code size={28} />
-                <h3 className="text-2xl font-bold">{selectedProject.title}</h3>
+                <Code size={20} />
+                <h3 className="text-lg font-bold">{selectedProject.title}</h3>
               </div>
-              <button
-                onClick={closeProjectModal}
-                className="text-white hover:bg-white/20 p-2 rounded-lg transition-all"
-              >
-                <X size={24} />
+              <button onClick={closeProjectModal} className="text-white hover:bg-white/10 p-2 rounded-md">
+                <X size={20} />
               </button>
             </div>
-            <div className="p-8">
-              <div className="mb-6">
-                <h4 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
-                  <div className="w-1 h-6 bg-gray-600 rounded"></div>
-                  Project Description
-                </h4>
-                <p className="text-gray-600 leading-relaxed text-lg">{selectedProject.description}</p>
+
+            <div className="p-6">
+              <h4 className="text-lg font-bold mb-2">Project Description</h4>
+              <p className="text-gray-700 mb-4">{selectedProject.description}</p>
+
+              <h4 className="text-lg font-bold mb-2">Key Features</h4>
+              <ul className="list-disc pl-5 mb-4">
+                {selectedProject.features.map((f, i) => <li key={i} className="text-gray-700 mb-1">{f}</li>)}
+              </ul>
+
+              <h4 className="text-lg font-bold mb-2">Technologies Used</h4>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {selectedProject.tech.map((t) => <span key={t} className="px-3 py-1 rounded bg-gray-100 border text-gray-700">{t}</span>)}
               </div>
 
-              <div className="mb-6">
-                <h4 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
-                  <div className="w-1 h-6 bg-gray-600 rounded"></div>
-                  Key Features
-                </h4>
-                <div className="grid md:grid-cols-2 gap-3">
-                  {selectedProject.features.map((feature, index) => (
-                    <div key={index} className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-300">
-                      <div className="w-2 h-2 bg-gray-600 rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-700 font-medium">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mb-6">
-                <h4 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
-                  <div className="w-1 h-6 bg-gray-600 rounded"></div>
-                  Technologies Used
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {selectedProject.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm border border-gray-400 font-semibold"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <a
-                  href={selectedProject.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 bg-gradient-to-r from-gray-700 to-gray-800 text-white px-4 py-3 rounded-lg hover:from-gray-800 hover:to-gray-900 transition-all text-center font-semibold flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
-                >
-                  <Github size={20} />
-                  GitHub Repository
-                </a>
-                <a
-                  href={selectedProject.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 bg-gradient-to-r from-gray-600 to-gray-700 text-white px-4 py-3 rounded-lg hover:from-gray-700 hover:to-gray-800 transition-all text-center font-semibold flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
-                >
-                  <Play size={20} />
-                  Demo Video
-                </a>
+              <div className="flex gap-3">
+                <a href={selectedProject.github} target="_blank" rel="noreferrer" className="px-4 py-2 bg-blue-700 text-white rounded-md">GitHub</a>
+                <a href={selectedProject.demo} target="_blank" rel="noreferrer" className="px-4 py-2 bg-blue-600 text-white rounded-md">Demo</a>
+                <button onClick={closeProjectModal} className="px-4 py-2 border rounded-md">Close</button>
               </div>
             </div>
           </div>
         </div>
       )}
-
-      <style jsx>{`
-        .bg-grid-pattern {
-          background-image: 
-            linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-          background-size: 20px 20px;
-        }
-        
-        @keyframes pulse {
-          0%, 100% {
-            opacity: 1;
-          }
-          50% {
-            opacity: 0.5;
-          }
-        }
-        
-        .animate-pulse {
-          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-      `}</style>
     </div>
   );
 }
