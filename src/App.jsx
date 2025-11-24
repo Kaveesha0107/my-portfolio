@@ -119,13 +119,13 @@ export default function Portfolio() {
     setSelectedProject(null); 
   }; 
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 font-sans">
+   return (
+    <div className="min-h-screen bg-white font-sans">
       {/* Navigation Header */}
-      <header className="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+      <header className="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 border-b border-gray-100">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-blue-700 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">KM</span>
             </div>
             <span className="font-semibold text-gray-800">Kaveesha Muthunilmi</span>
@@ -139,8 +139,8 @@ export default function Portfolio() {
                 onClick={() => scrollToSection(section)} 
                 className={`capitalize font-medium px-4 py-2 rounded-lg transition-all duration-300 ${
                   activeSection === section 
-                    ? 'text-white bg-gradient-to-r from-blue-600 to-indigo-600 shadow-sm' 
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-blue-50'
+                    ? 'text-white bg-blue-700 shadow-sm' 
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                 }`}
               >
                 {section}
@@ -150,7 +150,7 @@ export default function Portfolio() {
           
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden p-2 rounded-lg bg-blue-50 text-blue-700"
+            className="md:hidden p-2 rounded-lg bg-gray-50 text-gray-700"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -166,7 +166,7 @@ export default function Portfolio() {
                 onClick={() => scrollToSection(section)} 
                 className={`block w-full text-left py-3 px-4 capitalize transition-colors border-b border-gray-100 ${
                   activeSection === section 
-                    ? 'bg-blue-50 text-blue-700 font-semibold' 
+                    ? 'bg-gray-100 text-gray-900 font-semibold' 
                     : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                 }`}
               >
@@ -178,7 +178,7 @@ export default function Portfolio() {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-600 to-indigo-700 text-white">
+      <section id="home" className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-800 to-blue-900 text-white">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
             <div className="inline-block px-3 py-1 bg-white/20 rounded-full text-sm mb-4 backdrop-blur-sm">
@@ -194,7 +194,7 @@ export default function Portfolio() {
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <button 
                 onClick={() => scrollToSection('projects')} 
-                className="bg-white text-blue-700 px-6 py-3 rounded-lg hover:bg-blue-50 transition-all duration-200 shadow-md font-semibold flex items-center justify-center gap-2"
+                className="bg-white text-blue-800 px-6 py-3 rounded-lg hover:bg-blue-50 transition-all duration-200 shadow-md font-semibold flex items-center justify-center gap-2"
               >
                 <Briefcase size={18} />
                 View Projects
@@ -219,7 +219,7 @@ export default function Portfolio() {
                   }} 
                 />
               </div>
-              <div className="absolute -bottom-2 -right-2 bg-blue-500 text-white p-3 rounded-full shadow-lg">
+              <div className="absolute -bottom-2 -right-2 bg-blue-600 text-white p-3 rounded-full shadow-lg">
                 <Award size={24} />
               </div>
             </div>
@@ -232,14 +232,14 @@ export default function Portfolio() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">About Me</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto"></div>
+            <div className="w-20 h-1 bg-blue-700 mx-auto"></div>
           </div>
           
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="lg:w-2/3">
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl shadow-sm mb-6">
+              <div className="bg-blue-50 p-6 rounded-xl border border-blue-100 mb-6">
                 <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                  <GraduationCap className="text-blue-600 mr-2" size={22} />
+                  <GraduationCap className="text-blue-700 mr-2" size={22} />
                   Professional Summary
                 </h3>
                 <p className="text-gray-600 mb-4">
@@ -250,9 +250,9 @@ export default function Portfolio() {
                 </p>
               </div>
               
-              <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+              <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
                 <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                  <Code className="text-blue-600 mr-2" size={22} />
+                  <Code className="text-blue-700 mr-2" size={22} />
                   Technical Expertise
                 </h3>
                 <p className="text-gray-600 mb-6">
@@ -261,11 +261,11 @@ export default function Portfolio() {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {Object.entries(skills).map(([category, skillList]) => (
-                    <div key={category} className="bg-blue-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-blue-700 mb-3">{category}</h4>
+                    <div key={category} className="bg-blue-50 rounded-lg p-4 border border-blue-100">
+                      <h4 className="font-semibold text-blue-800 mb-3">{category}</h4>
                       <div className="flex flex-wrap gap-2">
                         {skillList.map((skill) => (
-                          <span key={skill} className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-medium shadow-sm">
+                          <span key={skill} className="bg-white text-blue-700 px-3 py-1 rounded-full text-sm font-medium border border-blue-200">
                             {skill}
                           </span>
                         ))}
@@ -277,7 +277,7 @@ export default function Portfolio() {
             </div>
             
             <div className="lg:w-1/3">
-              <div className="bg-gradient-to-br from-blue-600 to-indigo-600 text-white p-6 rounded-xl shadow-lg h-full">
+              <div className="bg-blue-800 text-white p-6 rounded-xl shadow-lg h-full">
                 <h3 className="text-xl font-semibold mb-4 flex items-center">
                   <Award className="mr-2" size={22} />
                   Quick Facts
@@ -318,19 +318,19 @@ export default function Portfolio() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
+      <section id="projects" className="py-16 bg-blue-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Portfolio</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Showcasing solutions across web and mobile platforms.
             </p>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mt-4"></div>
+            <div className="w-20 h-1 bg-blue-700 mx-auto mt-4"></div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project) => (
-              <div key={project.id} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
+              <div key={project.id} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200">
                 <div className="p-5">
                   <div className="flex justify-between items-start mb-3">
                     <h3 className="text-xl font-bold text-gray-800">{project.title}</h3>
@@ -344,7 +344,7 @@ export default function Portfolio() {
                     <h4 className="font-medium text-gray-700 mb-2">Key Features</h4>
                     <div className="flex flex-wrap gap-1 mb-3">
                       {project.features.map((feature, index) => (
-                        <span key={index} className="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded">
+                        <span key={index} className="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded border border-blue-100">
                           {feature}
                         </span>
                       ))}
@@ -355,7 +355,7 @@ export default function Portfolio() {
                     <h4 className="font-medium text-gray-700 mb-2">Technologies</h4>
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((tech) => (
-                        <span key={tech} className="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">
+                        <span key={tech} className="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full border border-gray-200">
                           {tech}
                         </span>
                       ))}
@@ -374,7 +374,7 @@ export default function Portfolio() {
                     </a>
                     <button 
                       onClick={() => openProjectModal(project)} 
-                      className="flex-1 border border-blue-600 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50 transition-all text-center font-medium flex items-center justify-center gap-2"
+                      className="flex-1 border border-blue-700 text-blue-700 px-4 py-2 rounded-lg hover:bg-blue-50 transition-all text-center font-medium flex items-center justify-center gap-2"
                     >
                       <ExternalLink size={16} />
                       View Details
@@ -393,27 +393,45 @@ export default function Portfolio() {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Academic Background</h2>
             <p className="text-lg text-gray-600">Education & Certifications</p>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mt-4"></div>
+            <div className="w-20 h-1 bg-blue-700 mx-auto mt-4"></div>
           </div>
           
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Education */}
             <div className="lg:w-1/2">
-              <div className="bg-gradient-to-br from-blue-600 to-indigo-600 text-white p-6 rounded-xl shadow-lg mb-8">
+              <div className="bg-blue-800 text-white p-6 rounded-xl shadow-lg mb-8">
                 <h3 className="text-2xl font-bold mb-6 flex items-center">
                   <GraduationCap className="mr-3" size={28} />
                   Education
                 </h3>
                 
-                <div className="bg-white/10 p-5 rounded-lg backdrop-blur-sm">
-                  <h4 className="text-xl font-semibold mb-2">BSc (Hons) in Information Technology</h4>
-                  <p className="text-blue-100 mb-1">Sri Lanka Institute of Information Technology (SLIIT)</p>
-                  <div className="flex justify-between text-sm text-blue-100 mb-3">
-                    <span>Expected Graduation: 2027</span>
-                    <span>2023 - Present</span>
+                <div className="space-y-6">
+                  <div className="bg-white/10 p-5 rounded-lg backdrop-blur-sm">
+                    <h4 className="text-xl font-semibold mb-2">BSc (Hons) in Information Technology</h4>
+                    <p className="text-blue-100 mb-1">Sri Lanka Institute of Information Technology (SLIIT)</p>
+                    <div className="flex justify-between text-sm text-blue-100 mb-3">
+                      <span>Expected Graduation: 2027</span>
+                      <span>2023 - Present</span>
+                    </div>
+                    <div className="bg-white/20 p-3 rounded-lg">
+                      <p className="font-medium">Current GPA: <span className="text-white">3.3 / 4.0</span></p>
+                    </div>
                   </div>
-                  <div className="bg-white/20 p-3 rounded-lg">
-                    <p className="font-medium">Current GPA: <span className="text-white">3.3 / 4.0</span></p>
+                  
+                  <div className="bg-white/10 p-5 rounded-lg backdrop-blur-sm">
+                    <h4 className="text-xl font-semibold mb-2">G.C.E. Advanced Level - Mathematics Stream</h4>
+                    <p className="text-blue-100 mb-1">G/Janadipathi Balika Vidyalaya</p>
+                    <div className="flex justify-between text-sm text-blue-100 mb-3">
+                      <span>Completed: 2022</span>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-white/10 p-5 rounded-lg backdrop-blur-sm">
+                    <h4 className="text-xl font-semibold mb-2">Grade 1-11 Education</h4>
+                    <p className="text-blue-100 mb-1">G/Nagoda Royal College</p>
+                    <div className="flex justify-between text-sm text-blue-100 mb-3">
+                      <span>Completed: 2019</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -423,7 +441,7 @@ export default function Portfolio() {
             <div className="lg:w-1/2">
               <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-6">
                 <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                  <Award className="text-blue-600 mr-3" size={28} />
+                  <Award className="text-blue-700 mr-3" size={28} />
                   Professional Certifications
                 </h3>
                 
@@ -437,14 +455,14 @@ export default function Portfolio() {
                       <div className="flex">
                         <div className="w-20 h-20 flex-shrink-0 bg-blue-50 flex items-center justify-center">
                           <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                            <Award className="text-blue-600" size={24} />
+                            <Award className="text-blue-700" size={24} />
                           </div>
                         </div>
                         <div className="p-4 flex-1">
                           <h4 className="font-semibold text-gray-800">{cert.name}</h4>
                           <p className="text-gray-600 text-sm">{cert.issuer}</p>
                           <div className="flex justify-between items-center mt-2">
-                            <span className="text-blue-600 text-sm font-medium">{cert.date}</span>
+                            <span className="text-blue-700 text-sm font-medium">{cert.date}</span>
                             {cert.verification && cert.verification !== "N/A" && (
                               <span className="text-gray-500 text-xs">ID: {cert.verification}</span>
                             )}
@@ -452,7 +470,7 @@ export default function Portfolio() {
                         </div>
                       </div>
                       <div className="px-4 py-2 bg-gray-50 border-t border-gray-200 text-right">
-                        <button className="text-blue-600 text-sm font-medium flex items-center justify-end w-full">
+                        <button className="text-blue-700 text-sm font-medium flex items-center justify-end w-full">
                           View Certificate
                           <ExternalLink size={14} className="ml-1" />
                         </button>
@@ -466,122 +484,122 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
-            <div className="md:flex">
-              <div className="md:w-2/5 bg-gradient-to-br from-blue-600 to-indigo-600 text-white p-8">
-                <h2 className="text-2xl font-bold mb-6">Get In Touch</h2>
-                <p className="mb-8 text-blue-100">
-                  Let's collaborate on your next project or discuss new opportunities.
-                </p>
-                
-                <div className="space-y-5">
-                  <div className="flex items-start">
-                    <div className="bg-white/20 p-3 rounded-lg mr-4">
-                      <Phone size={20} />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold">Phone</h3>
-                      <p className="text-blue-100">076-1620836</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="bg-white/20 p-3 rounded-lg mr-4">
-                      <Mail size={20} />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold">Email</h3>
-                      <p className="text-blue-100">kaveeshamuthunilmi@gmail.com</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="bg-white/20 p-3 rounded-lg mr-4">
-                      <MapPin size={20} />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold">Location</h3>
-                      <p className="text-blue-100">Ehalakanda, Aluthihala, Mapalagama, Galle</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="mt-8 flex space-x-4">
-                  <a 
-                    href="https://github.com/kaveesha-muthunilmi" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="bg-white/20 hover:bg-white/30 p-3 rounded-lg transition-colors"
-                  >
-                    <Github size={20} />
-                  </a>
-                  <a 
-                    href="#" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="bg-white/20 hover:bg-white/30 p-3 rounded-lg transition-colors"
-                  >
-                    <Linkedin size={20} />
-                  </a>
-                </div>
+{/* Contact Section */}
+<section id="contact" className="py-16 bg-blue-50">
+  <div className="container mx-auto px-4">
+    <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+      <div className="md:flex">
+        <div className="md:w-2/5 bg-blue-800 text-white p-8">
+          <h2 className="text-2xl font-bold mb-6">Get In Touch</h2>
+          <p className="mb-8 text-blue-100">
+            Let's collaborate on your next project or discuss new opportunities.
+          </p>
+          
+          <div className="space-y-5">
+            <div className="flex items-start">
+              <div className="bg-white/20 p-3 rounded-lg mr-4">
+                <Phone size={20} />
               </div>
-              
-              <div className="md:w-3/5 p-8">
-                <h3 className="text-2xl font-bold text-gray-800 mb-6">Send me a message</h3>
-                <form className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-gray-700 mb-2" htmlFor="name">Your Name</label>
-                      <input 
-                        type="text" 
-                        id="name" 
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        placeholder="John Doe"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-gray-700 mb-2" htmlFor="email">Email Address</label>
-                      <input 
-                        type="email" 
-                        id="email" 
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        placeholder="john@example.com"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-gray-700 mb-2" htmlFor="subject">Subject</label>
-                    <input 
-                      type="text" 
-                      id="subject" 
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="Project Collaboration"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-700 mb-2" htmlFor="message">Message</label>
-                    <textarea 
-                      id="message" 
-                      rows="5"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="Tell me about your project or opportunity..."
-                    ></textarea>
-                  </div>
-                  <button 
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all shadow-md"
-                  >
-                    Send Message
-                  </button>
-                </form>
+              <div>
+                <h3 className="font-semibold">Phone</h3>
+                <p className="text-blue-100">076-1620836</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start">
+              <div className="bg-white/20 p-3 rounded-lg mr-4">
+                <Mail size={20} />
+              </div>
+              <div>
+                <h3 className="font-semibold">Email</h3>
+                <p className="text-blue-100">kaveeshamuthunilmi@gmail.com</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start">
+              <div className="bg-white/20 p-3 rounded-lg mr-4">
+                <MapPin size={20} />
+              </div>
+              <div>
+                <h3 className="font-semibold">Location</h3>
+                <p className="text-blue-100">Ehalakanda, Aluthihala, Mapalagama, Galle</p>
               </div>
             </div>
           </div>
+          
+          <div className="mt-8 flex space-x-4">
+            <a 
+              href="https://github.com/kaveesha-muthunilmi" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-white/20 hover:bg-white/30 p-3 rounded-lg transition-colors"
+            >
+              <Github size={20} />
+            </a>
+            <a 
+              href="#" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-white/20 hover:bg-white/30 p-3 rounded-lg transition-colors"
+            >
+              <Linkedin size={20} />
+            </a>
+          </div>
         </div>
-      </section>
+        
+        <div className="md:w-3/5 p-8">
+          <h3 className="text-2xl font-bold text-gray-800 mb-6">Send me a message</h3>
+          <form className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-gray-700 mb-2" htmlFor="name">Your Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-700 focus:border-transparent"
+                  placeholder="John Doe"
+                />
+              </div>
+              <div>
+                <label className="block text-gray-700 mb-2" htmlFor="email">Email Address</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-700 focus:border-transparent"
+                  placeholder="john@example.com"
+                />
+              </div>
+            </div>
+            <div>
+              <label className="block text-gray-700 mb-2" htmlFor="subject">Subject</label>
+              <input 
+                type="text" 
+                id="subject" 
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-700 focus:border-transparent"
+                placeholder="Project Collaboration"
+              />
+            </div>
+            <div>
+              <label className="block text-gray-700 mb-2" htmlFor="message">Message</label>
+              <textarea 
+                id="message" 
+                rows="5"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-700 focus:border-transparent"
+                placeholder="Tell me about your project or opportunity..."
+              ></textarea>
+            </div>
+            <button 
+              type="submit"
+              className="w-full bg-blue-700 text-white py-3 rounded-lg font-semibold hover:bg-blue-800 transition-all shadow-md"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-8">
@@ -589,7 +607,7 @@ export default function Portfolio() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <div className="flex items-center space-x-2 mb-2">
-                <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-blue-700 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold">KM</span>
                 </div>
                 <span className="font-semibold">Kaveesha Muthunilmi</span>
@@ -651,7 +669,7 @@ export default function Portfolio() {
                       href={selectedCert.image} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg text-center font-medium hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+                      className="flex-1 bg-blue-700 text-white py-2 px-4 rounded-lg text-center font-medium hover:bg-blue-800 transition-colors flex items-center justify-center gap-2"
                     >
                       <ExternalLink size={16} />
                       Open Image
@@ -702,7 +720,7 @@ export default function Portfolio() {
                 <h4 className="font-semibold text-gray-700 mb-2">Technologies Used</h4>
                 <div className="flex flex-wrap gap-2">
                   {selectedProject.tech.map((t) => (
-                    <span key={t} className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">
+                    <span key={t} className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm border border-blue-200">
                       {t}
                     </span>
                   ))}
@@ -723,7 +741,7 @@ export default function Portfolio() {
                   href={selectedProject.demo} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex-1 bg-blue-600 text-white py-3 px-4 rounded-lg text-center font-medium hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+                  className="flex-1 bg-blue-700 text-white py-3 px-4 rounded-lg text-center font-medium hover:bg-blue-800 transition-colors flex items-center justify-center gap-2"
                 >
                   <Play size={18} />
                   Demo
