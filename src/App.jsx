@@ -9,6 +9,9 @@ import htmlCert from './assets/certificates/html.jpg';
 import jpuraCert from './assets/certificates/japura.png'; 
 import webdesignCert from './assets/certificates/webdesign.png'; 
 import profileImage from './assets/certificates/profile.jpg'; 
+import myCV from './assets/cv/Kaveesha_Muthunilmi_CV.pdf';
+
+
 
 export default function Portfolio() { 
   const [activeSection, setActiveSection] = useState('home'); 
@@ -22,7 +25,7 @@ export default function Portfolio() {
       title: "Professional Portfolio Website", 
       description: "A modern, responsive portfolio website built with React and Tailwind CSS. Features smooth navigation, interactive project showcases, certification displays, and comprehensive skill presentation.", 
       tech: ["React", "Tailwind CSS", "JavaScript", "HTML5"], 
-      github: "https://github.com/kaveesha-muthunilmi/portfolio", 
+      github: "https://github.com/Kaveesha0107/my-portfolio", 
       demo: "#", 
       features: ["Responsive Design", "Interactive Modals", "Smooth Navigation", "Professional Layout"], 
       status: "Completed" 
@@ -32,7 +35,7 @@ export default function Portfolio() {
       title: "WellCore | Personal Wellness Mobile App", 
       description: "Designed and developed a wellness-focused Android application to help users build healthy habits, track moods, and stay hydrated with ease. Features include habit tracking, mood analytics, water intake reminders, and interactive widgets.", 
       tech: ["Android Studio", "Kotlin", "Java", "SQLite"], 
-      github: "https://github.com/kaveesha-muthunilmi/wellcore-app", 
+      github: "https://github.com/Kaveesha0107/WellnessApp", 
       demo: "https://youtube.com/watch?v=your-demo", 
       features: ["Habit Tracking", "Mood Analytics", "Water Reminders", "Interactive Widgets", "Data Visualization"], 
       status: "Completed" 
@@ -42,7 +45,7 @@ export default function Portfolio() {
       title: "Salary Management System", 
       description: "A full-stack web application designed to calculate, track, and manage employee salaries, built using the MERN stack with advanced reporting features.", 
       tech: ["MongoDB", "Express.js", "React.js", "Node.js"], 
-      github: "https://github.com/kaveesha-muthunilmi/salary-management", 
+      github: "https://github.com/Kaveesha0107/MyBudgetPal", 
       demo: "https://youtube.com/watch?v=your-demo", 
       features: ["Employee Management", "Salary Calculation", "PDF Reports", "Analytics Dashboard"], 
       status: "Completed" 
@@ -52,7 +55,7 @@ export default function Portfolio() {
       title: "EverGreen | Tea Collection Mobile App", 
       description: "Designed and built an Android application to digitalize and streamline the tea leaf collection process between farmers and factories with real-time tracking.", 
       tech: ["Android Studio", "Java", "Kotlin", "Firebase"], 
-      github: "https://github.com/kaveesha-muthunilmi/evergreen-app", 
+      github: "https://github.com/Kaveesha0107/EverGreenApp", 
       demo: "https://youtube.com/watch?v=your-demo", 
       features: ["Farmer Registration", "Collection Tracking", "Payment Processing", "Real-time Updates"], 
       status: "Completed" 
@@ -147,15 +150,15 @@ export default function Portfolio() {
   }; 
 
   const downloadCV = () => {
-    // Replace with your actual CV file path
-    const cvUrl = '/path/to/your-cv.pdf';
-    const link = document.createElement('a');
-    link.href = cvUrl;
-    link.download = 'Kaveesha_Muthunilmi_CV.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  const link = document.createElement('a');
+  link.href = myCV;
+  link.download = 'Kaveesha_Muthunilmi_CV.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
+
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
@@ -347,7 +350,7 @@ export default function Portfolio() {
                       <GraduationCap size={20} />
                     </div>
                     <div>
-                      <p className="font-medium">BSc IT Undergraduate</p>
+                      <p className="font-medium">BSc SE Undergraduate</p>
                       <p className="text-gray-300 text-sm mt-1">SLIIT (2023-2027)</p>
                     </div>
                   </li>
@@ -465,10 +468,9 @@ export default function Portfolio() {
                 
                 <div className="space-y-6">
                   <div className="border border-gray-200 rounded-lg p-6 hover:border-blue-300 transition-colors">
-                    <h4 className="text-xl font-semibold text-gray-800 mb-2">BSc (Hons) in Information Technology</h4>
+                    <h4 className="text-xl font-semibold text-gray-800 mb-2">BSc (Hons) in Software Engineering</h4>
                     <p className="text-gray-600 mb-1">Sri Lanka Institute of Information Technology (SLIIT)</p>
                     <div className="flex justify-between text-sm text-gray-500 mb-3">
-                      <span>Expected Graduation: 2027</span>
                       <span>2023 - Present</span>
                     </div>
                   </div>
@@ -578,7 +580,7 @@ export default function Portfolio() {
                 
                 <div className="mt-8 flex space-x-4">
                   <a 
-                    href="https://github.com/kaveesha-muthunilmi" 
+                    href="https://github.com/Kaveesha0107" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="bg-white/10 hover:bg-white/20 p-3 rounded-lg transition-colors"
@@ -586,7 +588,7 @@ export default function Portfolio() {
                     <Github size={20} />
                   </a>
                   <a 
-                    href="#" 
+                    href="https://www.linkedin.com/in/kaveesha-muthunilmi" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="bg-white/10 hover:bg-white/20 p-3 rounded-lg transition-colors"
