@@ -652,27 +652,92 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-6 md:mb-0">
-              <div className="flex items-center space-x-3 mb-3">
-                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold">KM</span>
-                </div>
-                <span className="font-semibold text-lg">Kaveesha Muthunilmi</span>
-              </div>
-              <p className="text-gray-400">
-                Software Engineering Undergraduate | Full-Stack
-              </p>
-            </div>
-            <div className="text-gray-400">
-              © 2024 Kaveesha Muthunilmi. All rights reserved.
-            </div>
+    {/* Footer */}
+<footer className="bg-gray-800 text-white py-12">
+  <div className="container mx-auto px-4">
+    <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
+      {/* Brand Section */}
+      <div className="flex-1">
+        <div className="flex items-center space-x-3 mb-3">
+          <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+            <span className="text-white font-bold">KM</span>
+          </div>
+          <span className="font-semibold text-lg">Kaveesha Muthunilmi</span>
+        </div>
+        <p className="text-gray-400 max-w-md">
+          Software Engineering Undergraduate | Full-Stack Developer
+        </p>
+      </div>
+
+      {/* Navigation Links */}
+      <div className="flex-1">
+        <h3 className="font-semibold text-lg mb-4 text-white">Quick Links</h3>
+        <div className="grid grid-cols-2 gap-4">
+          {['home', 'about', 'projects', 'education', 'contact'].map((section) => (
+            <button 
+              key={section}
+              onClick={() => scrollToSection(section)} 
+              className={`text-left text-gray-300 hover:text-white transition-colors duration-200 capitalize ${
+                activeSection === section ? 'text-blue-400 font-medium' : ''
+              }`}
+            >
+              {section}
+            </button>
+          ))}
+         
+        </div>
+      </div>
+
+      {/* Contact Info */}
+      <div className="flex-1">
+        <h3 className="font-semibold text-lg mb-4 text-white">Contact Info</h3>
+        <div className="space-y-3">
+          <div className="flex items-center gap-3">
+            <Mail size={16} className="text-gray-400" />
+            <span className="text-gray-300 text-sm">kaveeshamuthunilmi@gmail.com</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <Phone size={16} className="text-gray-400" />
+            <span className="text-gray-300 text-sm">076-1620836</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <MapPin size={16} className="text-gray-400" />
+            <span className="text-gray-300 text-sm">Galle, Sri Lanka</span>
           </div>
         </div>
-      </footer>
+        
+        {/* Social Links */}
+        <div className="flex space-x-3 mt-4">
+          <a 
+            href="https://github.com/Kaveesha0107" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-gray-700 hover:bg-gray-600 p-2 rounded-lg transition-colors duration-200"
+            aria-label="GitHub"
+          >
+            <Github size={18} />
+          </a>
+          <a 
+            href="https://www.linkedin.com/in/kaveesha-muthunilmi" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-gray-700 hover:bg-gray-600 p-2 rounded-lg transition-colors duration-200"
+            aria-label="LinkedIn"
+          >
+            <Linkedin size={18} />
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    {/* Copyright */}
+    <div className="border-t border-gray-700 mt-8 pt-8 text-center">
+      <p className="text-gray-400">
+        © {new Date().getFullYear()} Kaveesha Muthunilmi. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
 
       {/* Certificate Modal */}
       {selectedCert && (
