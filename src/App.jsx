@@ -236,13 +236,12 @@ export default function Portfolio() {
             <div className="inline-block px-4 py-2 bg-gray-100 rounded-full text-sm mb-6 text-gray-600 font-medium">
               <span className="flex items-center">
                 <Code size={16} className="mr-2" />
-                Information Technology Undergraduate
+                Software Engineering Undergraduate
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">KAVEESHA MUTHUNILMI</h1>
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-lg leading-relaxed">
-              Passionate IT undergraduate specializing in full-stack and mobile development. 
-              Creating practical, user-friendly applications using modern tools and best practices.
+              Passionate Software Engineering Undergraduate at SLIIT, focused on full-stack development. I enjoy creating practical, user-friendly solutions using modern tools and clean, scalable code.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <button 
@@ -391,7 +390,7 @@ export default function Portfolio() {
       <section id="projects" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Portfolio</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Projects</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Showcasing solutions across web and mobile platforms.
             </p>
@@ -477,17 +476,11 @@ export default function Portfolio() {
                   <div className="border border-gray-200 rounded-lg p-6 hover:border-blue-300 transition-colors">
                     <h4 className="text-xl font-semibold text-gray-800 mb-2">G.C.E. Advanced Level - Mathematics Stream</h4>
                     <p className="text-gray-600 mb-1">G/Janadipathi Balika Vidyalaya</p>
-                    <div className="flex justify-between text-sm text-gray-500 mb-3">
-                      <span>Completed: 2022</span>
-                    </div>
                   </div>
                   
                   <div className="border border-gray-200 rounded-lg p-6 hover:border-blue-300 transition-colors">
                     <h4 className="text-xl font-semibold text-gray-800 mb-2">Grade 1-11 Education</h4>
                     <p className="text-gray-600 mb-1">G/Nagoda Royal College</p>
-                    <div className="flex justify-between text-sm text-gray-500 mb-3">
-                      <span>Completed: 2019</span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -669,7 +662,7 @@ export default function Portfolio() {
                 <span className="font-semibold text-lg">Kaveesha Muthunilmi</span>
               </div>
               <p className="text-gray-400">
-                Information Technology Undergraduate | Full-Stack & Mobile Developer
+                Software Engineering Undergraduate | Full-Stack
               </p>
             </div>
             <div className="text-gray-400">
