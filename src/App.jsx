@@ -9,7 +9,7 @@ import htmlCert from './assets/certificates/html.jpg';
 import jpuraCert from './assets/certificates/japura.png'; 
 import webdesignCert from './assets/certificates/webdesign.png'; 
 import profileImage from './assets/certificates/profile.jpg'; 
-import myCV from './assets/cv/Kaveesha_Muthunilmi_CV.pdf';
+import myCV from './assets/cv/Kaveesha_CV.pdf';
 
 
 
