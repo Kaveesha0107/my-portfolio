@@ -351,7 +351,7 @@ export default function Portfolio() {
                     </div>
                     <div>
                       <p className="font-medium">BSc SE Undergraduate</p>
-                      <p className="text-gray-300 text-sm mt-1">SLIIT (2023-2027)</p>
+                      <p className="text-gray-300 text-sm mt-1">SLIIT (2023-Present)</p>
                     </div>
                   </li>
                   <li className="flex items-start">
@@ -476,7 +476,7 @@ export default function Portfolio() {
                   </div>
                   
                   <div className="border border-gray-200 rounded-lg p-6 hover:border-blue-300 transition-colors">
-                    <h4 className="text-xl font-semibold text-gray-800 mb-2">G.C.E. Advanced Level - Mathematics Stream</h4>
+                    <h4 className="text-xl font-semibold text-gray-800 mb-2">G.C.E. Advanced Level - Physical Science</h4>
                     <p className="text-gray-600 mb-1">G/Janadipathi Balika Vidyalaya</p>
                   </div>
                   
@@ -608,7 +608,7 @@ export default function Portfolio() {
                         type="text" 
                         id="name" 
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
-                        placeholder="John Doe"
+                        placeholder="Kaveesha Muthunilmi"
                       />
                     </div>
                     <div>
@@ -617,7 +617,7 @@ export default function Portfolio() {
                         type="email" 
                         id="email" 
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
-                        placeholder="john@example.com"
+                        placeholder="Kaveesha@example.com"
                       />
                     </div>
                   </div>
