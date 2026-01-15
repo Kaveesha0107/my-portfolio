@@ -36,17 +36,17 @@ export default function Portfolio() {
       description: "Designed and developed a wellness-focused Android application to help users build healthy habits, track moods, and stay hydrated with ease. Features include habit tracking, mood analytics, water intake reminders, and interactive widgets.", 
       tech: ["Android Studio", "Kotlin", "Java", "SQLite"], 
       github: "https://github.com/Kaveesha0107/WellnessApp", 
-      demo: "https://youtube.com/watch?v=your-demo", 
+      demo: "https://www.linkedin.com/posts/kaveesha-muthunilmi_androiddevelopment-mobileappdevelopment-wellnessapp-activity-7407708595544293377-sWV2?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE8mBa8BctHHUjbwu8GuUyOMk_Vs6dPXNIw", 
       features: ["Habit Tracking", "Mood Analytics", "Water Reminders", "Interactive Widgets", "Data Visualization"], 
       status: "Completed" 
     }, 
     { 
       id: 3, 
-      title: "Salary Management System", 
+      title: "MyBudgetPal | Salary Management System", 
       description: "A full-stack web application designed to calculate, track, and manage employee salaries, built using the MERN stack with advanced reporting features.", 
       tech: ["MongoDB", "Express.js", "React.js", "Node.js"], 
       github: "https://github.com/Kaveesha0107/MyBudgetPal", 
-      demo: "https://youtube.com/watch?v=your-demo", 
+      demo: "https://www.linkedin.com/posts/kaveesha-muthunilmi_mernstack-fullstackdevelopment-groupproject-activity-7417469442286227456-DBVG?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE8mBa8BctHHUjbwu8GuUyOMk_Vs6dPXNIw", 
       features: ["Employee Management", "Salary Calculation", "PDF Reports", "Analytics Dashboard"], 
       status: "Completed" 
     }, 
@@ -56,7 +56,7 @@ export default function Portfolio() {
       description: "Designed and built an Android application to digitalize and streamline the tea leaf collection process between farmers and factories with real-time tracking.", 
       tech: ["Android Studio", "Java", "Kotlin", "Firebase"], 
       github: "https://github.com/Kaveesha0107/EverGreenApp", 
-      demo: "https://youtube.com/watch?v=your-demo", 
+      demo: "https://www.linkedin.com/posts/kaveesha-muthunilmi_sliit-uiuxdesign-androiddevelopment-activity-7387184039025319937-yr8-?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE8mBa8BctHHUjbwu8GuUyOMk_Vs6dPXNIw", 
       features: ["Farmer Registration", "Collection Tracking", "Payment Processing", "Real-time Updates"], 
       status: "Completed" 
     }, 
@@ -65,8 +65,8 @@ export default function Portfolio() {
       title: "Uni Hub | Online Customer Care System", 
       description: "Developed a dedicated online portal for university students to submit queries and receive support from the administration, built on the Java EE stack.", 
       tech: ["Java", "JSP", "MySQL", "Bootstrap"], 
-      github: "https://github.com/kaveesha-muthunilmi/unihub-system", 
-      demo: "https://youtube.com/watch?v=your-demo", 
+      github: "https://github.com/Kaveesha0107/Unihub.git", 
+      demo: " ", 
       features: ["Ticket System", "Admin Dashboard", "Email Notifications", "Knowledge Base"], 
       status: "Completed" 
     }, 
@@ -76,7 +76,7 @@ export default function Portfolio() {
       description: "A web-based platform developed in my first year to allow users to create customized diet plans and schedule health checkups with healthcare professionals.", 
       tech: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"], 
       github: "https://github.com/kaveesha-muthunilmi/medcore-system", 
-      demo: "https://youtube.com/watch?v=your-demo", 
+      demo: " ", 
       features: ["Diet Planning", "Appointment Booking", "Health Tracking", "Doctor Consultations"], 
       status: "Completed" 
     } 
@@ -112,18 +112,18 @@ export default function Portfolio() {
       { name: "Android Studio", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" },
       { name: "Kotlin", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" },
       { name: "Java", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
-      { name: "Firebase", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" }
+      //{ name: "Firebase", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" }
     ],
     "Databases": [
       { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
       { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-      { name: "SQLite", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" }
+      //{ name: "SQLite", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" }
     ],
     "Tools & Technologies": [
       { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
       { name: "GitHub", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
       { name: "REST APIs", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/swagger.svg" },
-      { name: "JWT", logo: "https://jwt.io/img/pic_logo.svg" }
+      //{ name: "JWT", logo: "https://jwt.io/img/pic_logo.svg" }
     ]
   };
 
