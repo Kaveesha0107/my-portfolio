@@ -75,7 +75,7 @@ export default function Portfolio() {
       title: "Medcore | Diet Plan & Health Checkup System", 
       description: "A web-based platform developed in my first year to allow users to create customized diet plans and schedule health checkups with healthcare professionals.", 
       tech: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"], 
-      github: "https://github.com/kaveesha-muthunilmi/medcore-system", 
+      github: "https://github.com/Kaveesha0107/MedCore.git", 
       demo: " ", 
       features: ["Diet Planning", "Appointment Booking", "Health Tracking", "Doctor Consultations"], 
       status: "Completed" 
