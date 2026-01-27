@@ -805,74 +805,79 @@ export default function Portfolio() {
       )}
 
       {/* Project Modal */}
-      {selectedProject && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="p-6 border-b border-gray-200 flex justify-between items-center">
-              <h3 className="text-xl font-bold text-gray-800">{selectedProject.title}</h3>
-              <button 
-                onClick={closeProjectModal}
-                className="text-gray-500 hover:text-gray-700 p-1 rounded-full hover:bg-gray-100 transition-colors"
-              >
-                <X size={24} />
-              </button>
-            </div>
-            <div className="p-6">
-              <div className="mb-6">
-                <h4 className="font-semibold text-gray-700 mb-2">Project Description</h4>
-                <p className="text-gray-600 leading-relaxed">{selectedProject.description}</p>
-              </div>
-              
-              <div className="mb-6">
-                <h4 className="font-semibold text-gray-700 mb-2">Key Features</h4>
-                <ul className="list-disc pl-5 text-gray-600 space-y-2">
-                  {selectedProject.features.map((f, i) => (
-                    <li key={i}>{f}</li>
-                  ))}
-                </ul>
-              </div>
-              
-              <div className="mb-6">
-                <h4 className="font-semibold text-gray-700 mb-2">Technologies Used</h4>
-                <div className="flex flex-wrap gap-2">
-                  {selectedProject.tech.map((t) => (
-                    <span key={t} className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm border border-blue-200">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-gray-200">
-                <a 
-                  href={selectedProject.github} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex-1 bg-gray-800 text-white py-3 px-4 rounded-lg text-center font-medium hover:bg-gray-900 transition-colors flex items-center justify-center gap-2"
-                >
-                  <Github size={18} />
-                  GitHub
-                </a>
-                <a 
-                  href={selectedProject.demo} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex-1 bg-blue-600 text-white py-3 px-4 rounded-lg text-center font-medium hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
-                >
-                  <Play size={18} />
-                  Demo
-                </a>
-                <button 
-                  onClick={closeProjectModal}
-                  className="flex-1 border border-gray-300 text-gray-700 py-3 px-4 rounded-lg font-medium hover:bg-gray-50 transition-colors"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
+{selectedProject && (
+  <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
+    <div className="bg-white rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+      <div className="p-6 border-b border-gray-200 flex justify-between items-center">
+        <h3 className="text-xl font-bold text-gray-800">{selectedProject.title}</h3>
+        <button 
+          onClick={closeProjectModal}
+          className="text-gray-500 hover:text-gray-700 p-1 rounded-full hover:bg-gray-100 transition-colors"
+        >
+          <X size={24} />
+        </button>
+      </div>
+      <div className="p-6">
+        <div className="mb-6">
+          <h4 className="font-semibold text-gray-700 mb-2">Project Description</h4>
+          <p className="text-gray-600 leading-relaxed">{selectedProject.description}</p>
+        </div>
+        
+        <div className="mb-6">
+          <h4 className="font-semibold text-gray-700 mb-2">Key Features</h4>
+          <ul className="list-disc pl-5 text-gray-600 space-y-2">
+            {selectedProject.features.map((f, i) => (
+              <li key={i}>{f}</li>
+            ))}
+          </ul>
+        </div>
+        
+        <div className="mb-6">
+          <h4 className="font-semibold text-gray-700 mb-2">Technologies Used</h4>
+          <div className="flex flex-wrap gap-2">
+            {selectedProject.tech.map((t) => (
+              <span key={t} className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm border border-blue-200">
+                {t}
+              </span>
+            ))}
           </div>
         </div>
-      )}
+        
+        <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-gray-200">
+          <a 
+            href={selectedProject.github} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex-1 bg-gray-800 text-white py-3 px-4 rounded-lg text-center font-medium hover:bg-gray-900 transition-colors flex items-center justify-center gap-2"
+          >
+            <Github size={18} />
+            GitHub
+          </a>
+          
+          {/* Demo button only shows if demo link is available */}
+          {selectedProject.demo && selectedProject.demo.trim() !== "" && (
+            <a 
+              href={selectedProject.demo} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex-1 bg-blue-600 text-white py-3 px-4 rounded-lg text-center font-medium hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+            >
+              <Play size={18} />
+              Demo
+            </a>
+          )}
+          
+          <button 
+            onClick={closeProjectModal}
+            className="flex-1 border border-gray-300 text-gray-700 py-3 px-4 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
     </div>
   ); 
 }
