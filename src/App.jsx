@@ -161,7 +161,7 @@ export default function Portfolio() {
 
 
   return (
-    <div className="min-h-screen bg-gray-50 font-sans">
+    <div className="portfolio min-h-screen bg-gray-50 font-sans">
       {/* Navigation Header */}
       <header className="fixed w-full bg-white shadow-sm z-50 border-b border-gray-200">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -200,6 +200,8 @@ export default function Portfolio() {
           <button 
             className="md:hidden p-2 rounded-lg bg-gray-100 text-gray-700"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? 'Close navigation' : 'Open navigation'}
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -242,7 +244,8 @@ export default function Portfolio() {
                 Software Engineering Undergraduate
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">KAVEESHA MUTHUNILMI</h1>
+            <p className="hero-name">HELLO, I'M</p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">Kaveesha <span>Muthunilmi.</span></h1>
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-lg leading-relaxed">
               Passionate Software Engineering Undergraduate at SLIIT, focused on full-stack development. I enjoy creating practical, user-friendly solutions using modern tools and clean, scalable code.
             </p>
@@ -274,8 +277,8 @@ export default function Portfolio() {
                   }} 
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-blue-600 text-white p-4 rounded-xl shadow-lg">
-                <Award size={28} />
+              <div className="portrait-note absolute -bottom-4 -right-4 bg-blue-600 text-white p-4 rounded-xl shadow-lg">
+                <span>BASED IN SRI LANKA</span><strong>Web & mobile developer</strong>
               </div>
             </div>
           </div>
@@ -600,13 +603,20 @@ export default function Portfolio() {
               
               <div className="md:w-3/5 p-8">
                 <h3 className="text-2xl font-bold text-gray-800 mb-6">Send me a message</h3>
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={(event) => {
+                  event.preventDefault();
+                  const form = event.currentTarget;
+                  const subject = encodeURIComponent(form.elements.subject.value || 'Portfolio enquiry');
+                  const body = encodeURIComponent(`From: ${form.elements.name.value} (${form.elements.email.value})\n\n${form.elements.message.value}`);
+                  window.location.href = `mailto:kaveeshamuthunilmi@gmail.com?subject=${subject}&body=${body}`;
+                }}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-gray-700 mb-2" htmlFor="name">Your Name</label>
                       <input 
                         type="text" 
                         id="name" 
+                        name="name" required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
                         placeholder="Kaveesha Muthunilmi"
                       />
@@ -616,6 +626,7 @@ export default function Portfolio() {
                       <input 
                         type="email" 
                         id="email" 
+                        name="email" required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
                         placeholder="Kaveesha@example.com"
                       />
@@ -626,6 +637,7 @@ export default function Portfolio() {
                     <input 
                       type="text" 
                       id="subject" 
+                      name="subject"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
                       placeholder="Project Collaboration"
                     />
@@ -634,6 +646,7 @@ export default function Portfolio() {
                     <label className="block text-gray-700 mb-2" htmlFor="message">Message</label>
                     <textarea 
                       id="message" 
+                      name="message" required
                       rows="5"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
                       placeholder="Tell me about your project or opportunity..."
@@ -643,7 +656,7 @@ export default function Portfolio() {
                     type="submit"
                     className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all shadow-md"
                   >
-                    Send Message
+                    Open email to send
                   </button>
                 </form>
               </div>
@@ -855,7 +868,7 @@ export default function Portfolio() {
           </a>
           
           {/* Demo button only shows if demo link is available */}
-          {selectedProject.demo && selectedProject.demo.trim() !== "" && (
+          {selectedProject.demo && selectedProject.demo.trim() !== "" && selectedProject.demo !== "#" && (
             <a 
               href={selectedProject.demo} 
               target="_blank" 
